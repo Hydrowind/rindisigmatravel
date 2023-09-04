@@ -74,7 +74,7 @@
 			})
 
 			var typed = new Typed('.typed-words', {
-				strings: ["San Francisco."," Paris."," New Zealand.", " Maui.", " London."],
+				strings: [" Japan."," Paris."," Dubai.", " Maui.", " London."],
 				typeSpeed: 80,
 				backSpeed: 80,
 				backDelay: 4000,
@@ -92,7 +92,18 @@
 		})
 	</script>
 
-	<script src="js/custom.js"></script>
+	<!-- Scrolling Navbar -->
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $(".site-nav");
+				$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<script src="/js/custom.js"></script>
 </body>
 
 </html>

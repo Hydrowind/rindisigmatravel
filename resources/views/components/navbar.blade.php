@@ -8,7 +8,7 @@
   <div class="site-mobile-menu-body"></div>
 </div>
 
-<nav class="site-nav">
+<nav class="site-nav fixed-top">
   <div class="container">
     <div class="site-navigation">
       <a href="/" class="logo m-0"><img src="/images/logo.png" alt="logo" width="100px"></a>
@@ -32,8 +32,8 @@
           </ul>
         </li> -->
         <li><a href="{{ route('tour') }}">Tour</a></li>
-        <!-- <li><a href="{{ route('blog') }}">Blog</a></li>
-        <li><a href="{{ route('about') }}">About</a></li> -->
+        <li><a href="{{ route('blog') }}">Blog</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
       </ul>
 
       <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">

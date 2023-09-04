@@ -1,9 +1,10 @@
 body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.5;
-  background: #ffffff;
-  overflow-x: hidden;
-  font-size: 14px; }
+  /* font-family: "Inter", sans-serif; */
+  /* line-height: 1.5; */
+  /* background: #ffffff; */
+  /* overflow-x: hidden; */
+  /* font-size: 14px; */
+  }
   body:before {
     content: "";
     position: fixed;
@@ -43,7 +44,8 @@ a {
 
 ::selection {
   background: #000000;
-  color: #ffffff; }
+  color: #ffffff;
+  }
 
 .text-primary {
   color: #1A374D !important; }
@@ -160,10 +162,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     color: #ffffff; }
 
 .site-nav {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   top: 0;
   z-index: 9;
-  width: 100%; }
+  width: 100%; 
+}
+
+.site-nav.scrolled {
+  background-color: #1A374D !important;
+  transition: background-color 200ms linear;
+}
 
 .site-nav {
   padding-top: 20px;
@@ -554,7 +563,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .hero.hero-inner {
     padding: 9rem 0 7rem 0;
     margin-bottom: auto;
-    background: #1A374D; }
+    background: #1A374D;
+    }
   .hero h1 {
     color: #ffffff;
     font-size: 60px; }
@@ -693,7 +703,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     transform: translateX(-50%); }
 
 .media-1 {
-  text-align: left; }
+  text-align: left;
+  border: 1px solid lightgray;
+  border-radius: 25px; }
   .media-1 img {
     border-radius: 20px; }
   .media-1 .loc .icon-room {

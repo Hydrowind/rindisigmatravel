@@ -29,8 +29,11 @@
         </div>
         <div class="col-lg-5 pl-lg-5 ml-auto">
           <h2 class="section-title mb-4">About Tours</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          <ul class="list-unstyled two-col clearfix">
+          <p class="text-justify">
+            <b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga - lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan.
+            Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing.
+          </p>
+          <!-- <ul class="list-unstyled two-col clearfix">
             <li>Outdoor recreation activities</li>
             <li>Airlines</li>
             <li>Car Rentals</li>
@@ -41,7 +44,7 @@
             <li>Package Tours</li>
             <li>Insurance</li>
             <li>Guide Books</li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -61,7 +64,7 @@
           <div class="team">
             <img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
-              <h3 class="mb-0">James Watson</h3>
+              <h3 class="mb-0">Rina Marlina</h3>
               <p>Co-Founder &amp; CEO</p>
             </div>
           </div>
@@ -70,27 +73,27 @@
           <div class="team">
             <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
-              <h3 class="mb-0">Carl Anderson</h3>
-              <p>Co-Founder &amp; CEO</p>
+              <h3 class="mb-0">M Arghi Herlansyah</h3>
+              <p>Direktur Operasional</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-3 mb-4">
           <div class="team">
-            <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
+            <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
-              <h3 class="mb-0">Michelle Allison</h3>
-              <p>Co-Founder &amp; CEO</p>
+              <h3 class="mb-0">Rubby Jovan Primananda</h3>
+              <p>Manajer Operasional</p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 mb-4">
           <div class="team">
-            <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
+            <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
-              <h3 class="mb-0">Drew Wood</h3>
-              <p>Co-Founder &amp; CEO</p>
+              <h3 class="mb-0">Nurfajrina Fitriani</h3>
+              <p>Digital Marketing</p>
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@
 
   
 
-  <div class="untree_co-section testimonial-section mt-5">
+  <!-- <div class="untree_co-section testimonial-section mt-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-7 text-center">
@@ -145,9 +148,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="untree_co-section">
+  <!-- <div class="untree_co-section">
     <div class="container">
       <div class="row justify-content-between align-items-center">
 
@@ -185,7 +188,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <div class="py-5 cta-section">
     <div class="container">
@@ -193,7 +196,7 @@
         <div class="col-md-12">
           <h2 class="mb-2 text-white">Lets you Explore the Best. Contact Us Now</h2>
           <p class="mb-4 lead text-white text-white-opacity">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fugit?</p>
-          <p class="mb-0"><a href="booking.html" class="btn btn-outline-white text-white btn-md font-weight-bold">Get in touch</a></p>
+          <p class="mb-0"><a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-white text-white btn-md font-weight-bold"><span class="icon-whatsapp"></span> WhatsApp</a></p>
         </div>
       </div>
     </div>

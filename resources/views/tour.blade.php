@@ -5,7 +5,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 mx-auto text-center">
           <div class="intro-wrap">
-            <h1 class="mb-0">Our Services</h1>
+            <h1 class="mb-0">Our Tours</h1>
             <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
           </div>
         </div>
@@ -15,7 +15,7 @@
 @endsection
   
 @section('content')
-<div class="row">
+<!-- <div class="row">
   <div class="col-12">
     <form class="form">
       <div class="row mb-2">
@@ -54,55 +54,77 @@
       </div>
     </form>
   </div>
+</div> -->
+
+<div class="untree_co-section">
+  <div class="container">
+    <div class="row">
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Tour Domestik</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Tour Internasional</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Pesan Tiket</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Sewa Mobil</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Buat Event</a>
+    </div>
+  </div>
 </div>
 
 <div class="untree_co-section">
   <div class="container">
     <div class="row">
-      <div class="col-6 col-md-6 col-lg-3">
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
         <div class="media-1">
-          <a href="#" class="d-block mb-3"><img src="images/product-1.jpg" alt="Image" class="img-fluid"></a>
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-1.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
-            <div>
-              <h3><a href="#">4 DAY LABUAN BAJO</a></h3>
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">4 DAY LABUAN BAJO</a></h3>
+              <p><span class="icon-clock-o"></span>25-09-2023</p>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-6 col-lg-3">
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
         <div class="media-1">
-          <a href="#" class="d-block mb-3"><img src="images/product-2.jpg" alt="Image" class="img-fluid"></a>
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-2.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
-            <div>
-              <h3><a href="#">1 DAY TRIP LEMBANG</a></h3>
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">1 DAY TRIP LEMBANG</a></h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-6 col-lg-3">
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
         <div class="media-1">
-          <a href="#" class="d-block mb-3"><img src="images/product-3.jpg" alt="Image" class="img-fluid"></a>
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-3.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
-            <div>
-              <h3><a href="#">1 DAY TRIP DUFAN</a></h3>
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">1 DAY TRIP DUFAN</a></h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-6 col-lg-3">
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
         <div class="media-1">
-          <a href="#" class="d-block mb-3"><img src="images/product-4.jpg" alt="Image" class="img-fluid"></a>
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-4.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
-            <div>
-              <h3><a href="#">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

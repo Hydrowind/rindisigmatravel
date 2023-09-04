@@ -97,7 +97,7 @@ $(function(){
 				loop: true,
 				autoHeight: true,
 				margin: 10,
-				autoplay: true,
+				autoplay: false,
 				smartSpeed: 700,
 				items: 1,
 				nav: true,
@@ -178,10 +178,10 @@ $(function(){
 			var owl = $('.owl-single').owlCarousel({
 				loop: true,
 				autoHeight: true,
-				margin: 0,
+				margin: 20,
 				autoplay: true,
 				smartSpeed: 800,
-				items: 1,
+				items: 3,
 				nav: false,
 				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
 				onInitialized: counter

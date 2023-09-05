@@ -172,7 +172,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .site-nav.scrolled {
   background-color: #1A374D !important;
   transition: background-color 200ms linear;
-  z-index: 25;
+  z-index: 9;
 }
 
 .site-nav {
@@ -596,7 +596,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         content: ""; }
   .hero .intro-wrap {
     position: relative;
-    z-index: 20; }
+    z-index: 2; }
   .hero .slides {
     background: #ffffff;
     max-width: 800px;

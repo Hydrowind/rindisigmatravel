@@ -170,7 +170,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .site-nav.scrolled {
-  background-color: #1A374D !important;
+  /* background-color: #1A374D !important; */
+  background-color: rgba(26, 55, 77, 0.75) !important;
   transition: background-color 200ms linear;
   z-index: 9;
 }

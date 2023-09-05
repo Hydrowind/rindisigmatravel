@@ -172,6 +172,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .site-nav.scrolled {
   background-color: #1A374D !important;
   transition: background-color 200ms linear;
+  z-index: 25;
 }
 
 .site-nav {
@@ -563,8 +564,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .hero.hero-inner {
     padding: 9rem 0 7rem 0;
     margin-bottom: auto;
-    background: #1A374D;
-    }
+    position: relative;
+    background-image: url('../images/product-5.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center center; }
+  .hero.hero-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; }
   .hero h1 {
     color: #ffffff;
     font-size: 60px; }
@@ -583,7 +596,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         content: ""; }
   .hero .intro-wrap {
     position: relative;
-    z-index: 1; }
+    z-index: 20; }
   .hero .slides {
     background: #ffffff;
     max-width: 800px;

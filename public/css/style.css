@@ -1259,6 +1259,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     width: 60px;
     height: 60px; }
 
+    /*Home - mini slideshow configuration*/
+    .owl-3-slider{
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .owl-stage-outer{
+      max-height: 400px !important;
+      border-radius: 20px !important;
+    }
+
+    .owl-item{
+      width: 800px;
+    }
+    
 .owl-single.dots-absolute .owl-dots, .owl-carousel.dots-absolute .owl-dots {
   bottom: 40px; }
   .owl-single.dots-absolute .owl-dots .owl-dot span, .owl-carousel.dots-absolute .owl-dots .owl-dot span {

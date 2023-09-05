@@ -78,9 +78,12 @@
           <div class="d-flex">
             <div class="p-3">
               <h3><a href="{{ route('detail') }}">4 DAY LABUAN BAJO</a></h3>
-              <p><span class="icon-clock-o"></span>25-09-2023</p>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Labuan Bajo</p>
+              </div>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>
         </div>
@@ -92,8 +95,12 @@
           <div class="d-flex">
             <div class="p-3">
               <h3><a href="{{ route('detail') }}">1 DAY TRIP LEMBANG</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p class="d-inline-block"><i class="icon-add_location"></i> Lembang</p>
+              </div>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>
         </div>
@@ -105,8 +112,12 @@
           <div class="d-flex">
             <div class="p-3">
               <h3><a href="{{ route('detail') }}">1 DAY TRIP DUFAN</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Dufan</p>
+              </div>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>
         </div>
@@ -118,8 +129,12 @@
           <div class="d-flex">
             <div class="p-3">
               <h3><a href="{{ route('detail') }}">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Chatay Pacific</p>
+              </div>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>
         </div>

@@ -21,6 +21,16 @@
         <!-- Content -->
         <div class="col-lg-7">
           <h2 class="section-title mb-4">4 DAY LABUAN BAJO</h2>
+          <div class="row text-black-50 mb-3">
+            <div class="col-6">
+              <p class="m-0"><i class="icon-clock-o"></i> Tanggal</p>
+              <b>25-09-2023</b>
+            </div>
+            <div class="col-6">
+              <p class="m-0"><i class="icon-add_location"></i> Lokasi</p>
+              <b>Lembang</b>
+            </div>
+          </div>
           <img src="images/slider-1.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
           
           <h2 class="mt-3">Explore Tours - 4 DAY LABUAN BAJO</h2>

@@ -1,7 +1,12 @@
 @extends('layouts.user')
 
 @section('hero')
-<div class="hero">
+<div class="hero slides">
+	<img src="images/hero-slider-1-ls.jpg" alt="Image" class="img-fluid active">
+	<img src="images/hero-slider-2-ls.jpg" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-3-ls.jpg" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-4-ls.jpg" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-5-ls.jpg" alt="Image" class="img-fluid">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-7">
@@ -9,15 +14,6 @@
           <h1 class="mb-5"><span class="d-block">Let's Enjoy Your</span> Trip In <span class="typed-words"></span></h1>
 					<a href="{{ route('tour') }}" class="btn btn-outline-white text-white btn-md font-weight-bold">View Tours</a>
           {{-- @include('components.search') --}}
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="slides">
-          <img src="images/hero-slider-1.jpg" alt="Image" class="img-fluid active">
-          <img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-          <img src="images/hero-slider-3.jpg" alt="Image" class="img-fluid">
-          <img src="images/hero-slider-4.jpg" alt="Image" class="img-fluid">
-          <img src="images/hero-slider-5.jpg" alt="Image" class="img-fluid">
         </div>
       </div>
     </div>

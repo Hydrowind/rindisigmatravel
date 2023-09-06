@@ -4,9 +4,10 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mx-auto text-center">
-          <div class="intro-wrap">
-            <h1 class="mb-0">Our Tours</h1>
-            <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+          <div class="intro-wrap"> 
+          <h3 class="text-white">LET'S TOUR </h3> 
+          <h6 class="text-white">with</h6> 
+          <h2 class="text-white">RINDI SIGMA SULTAN</h2>
           </div>
         </div>
       </div>
@@ -59,11 +60,10 @@
 <div class="untree_co-section">
   <div class="container">
     <div class="row">
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Tour Domestik</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Tour Internasional</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Pesan Tiket</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Sewa Mobil</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Buat Event</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Paket Tour</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Event Organizer</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Akomodasi</a>
+      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Transport</a>
     </div>
   </div>
 </div>
@@ -77,12 +77,12 @@
           <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-1.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
             <div class="p-3">
-              <h3><a href="{{ route('detail') }}">4 DAY LABUAN BAJO</a></h3>
+              <h3><a href="{{ route('detail') }}">YOGYAKARTA</a></h3>
               <div class="d-flex flex-column text-black-50">
-                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
-                <p><i class="icon-add_location"></i> Labuan Bajo</p>
+                <p class="m-0"><i class="icon-clock-o"></i> 3 Days - 2 Nights</p>
+                <p><i class="icon-add_location"></i> Indonesia - Yogyakarta</p>
               </div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Tour & Gathring Yogyakarta - Liburan Sekolah & Akhir Tahun 2023 - 3H2N</p>
               <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>
@@ -94,12 +94,12 @@
           <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-2.jpg" alt="Image" class="w-100 img-fluid"></a>
           <div class="d-flex">
             <div class="p-3">
-              <h3><a href="{{ route('detail') }}">1 DAY TRIP LEMBANG</a></h3>
+              <h3><a href="{{ route('detail') }}">LABUAN BAJO</a></h3>
               <div class="d-flex flex-column text-black-50">
-                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
-                <p class="d-inline-block"><i class="icon-add_location"></i> Lembang</p>
+                <p class="m-0"><i class="icon-clock-o"></i> 5 Days - 4 Nights </p>
+                <p class="d-inline-block"><i class="icon-add_location"></i> Indonesia - Nusa Tenggara </p>
               </div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Tour & Gathring Yogyakarta - Liburan Akhir Tahun 2023 - 5H4N</p>
               <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
             </div>
           </div>

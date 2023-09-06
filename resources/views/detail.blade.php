@@ -1,12 +1,12 @@
 @extends('layouts.user')
 @section('hero')
-  <div class="hero hero-inner" syle="height: 200px !important;">
+  <div class="hero hero-inner" >
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mx-auto text-center">
           <div class="intro-wrap">
-            <h1 class="mb-0">Explore Tours</h1>
-            <!-- <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
+            <h1 class="mb-0">Explor The Worlds</h1>
+            <p class="text-white">People Don't Take, Trips Take People</p>
           </div>
         </div>
       </div>
@@ -97,9 +97,13 @@
 
         <!-- Sidebar -->
         <div class="col-lg-5 pl-lg-5 ml-auto">
-          <p><a href="https://wa.me/+6282158751381?text=Halo Admin Rindi, Saya mau pesan 4 DAY LABUAN BAJO" target="_blank" class="btn btn-primary">Pesan Sekarang</a></p>
+          <div class="widget-sidebar">
+            <h2 class="section-title mb-4">Hubungi Kami</h2>
+            <p><a href="https://wa.me/+6282158751381?text=Halo Admin Rindi, Saya mau pesan 4 DAY LABUAN BAJO" target="_blank" class="btn btn-primary">Pesan Sekarang</a></p>
+          </div>
 
-          <h2 class="section-title mb-4">Tour Menarik Lainnya</h2>
+          <div.widget-sideba>
+          <h2 class="section-title mb-4 mt-5">Tour Menarik Lainnya</h2>
           
           <a href="{{ route('detail') }}" class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">

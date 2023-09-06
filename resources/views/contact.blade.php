@@ -6,7 +6,7 @@
         <div class="col-lg-6 mx-auto text-center">
           <div class="intro-wrap">
             <h1 class="mb-0">About Us</h1>
-            <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            <!-- <p class="text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
           </div>
         </div>
       </div>
@@ -18,7 +18,7 @@
   <div class="untree_co-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg-7 mt-3">
           <div class="owl-single dots-absolute owl-carousel">
             <img src="images/slider-1.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
             <img src="images/slider-2.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
@@ -27,12 +27,13 @@
             <img src="images/slider-5.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
           </div>
         </div>
-        <div class="col-lg-5 pl-lg-5 ml-auto">
+        <div class="col-lg-5 pl-lg-5 ml-auto  mt-3">
           <h2 class="section-title mb-4">About Tours</h2>
           <p class="text-justify">
             <b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga - lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan.
-            Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing.
           </p>
+          <!-- Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing. -->
+          
           <!-- <ul class="list-unstyled two-col clearfix">
             <li>Outdoor recreation activities</li>
             <li>Airlines</li>
@@ -60,7 +61,9 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-3 mb-4">
+        <div class="col-lg-1"></div> <!-- Gap -->
+
+        <div class="col-lg-2 mb-4">
           <div class="team">
             <img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
@@ -69,7 +72,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 mb-4">
+        <div class="col-lg-2 mb-4">
           <div class="team">
             <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
@@ -79,21 +82,32 @@
           </div>
         </div>
 
-        <div class="col-lg-3 mb-4">
-          <div class="team">
-            <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">Rubby Jovan Primananda</h3>
-              <p>Manajer Operasional</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 mb-4">
+        <div class="col-lg-2 mb-4">
           <div class="team">
             <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
               <h3 class="mb-0">Nurfajrina Fitriani</h3>
               <p>Digital Marketing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 mb-4">
+          <div class="team">
+            <img src="images/person_5.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
+            <div class="px-3">
+              <h3 class="mb-0">Syapira Agnia</h3>
+              <p>Marketing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 mb-4">
+          <div class="team">
+            <img src="images/person_6.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
+            <div class="px-3">
+              <h3 class="mb-0">Nabiel Alghifari</h3>
+              <p>Marketing</p>
             </div>
           </div>
         </div>

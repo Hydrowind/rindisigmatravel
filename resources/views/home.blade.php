@@ -12,7 +12,7 @@
       <div class="col-lg-7">
         <div class="intro-wrap">
           <h1 class="mb-5"><span class="d-block">Let's Enjoy Your</span> Trip In <span class="typed-words"></span></h1>
-					<a href="{{ route('tour') }}" class="btn btn-outline-white text-white btn-md font-weight-bold">View Tours</a>
+					<a href="{{ route('product') }}" class="btn btn-outline-white text-white btn-md font-weight-bold">View Tours</a>
           {{-- @include('components.search') --}}
         </div>
       </div>
@@ -155,7 +155,7 @@
 				<div class="feature-1 d-md-flex">
 					<div class="align-self-center">
 						<span class="flaticon-house display-4 text-primary"></span>
-						<h3>Paket Tour Domestik / Inter</h3>
+						<h3>Paket Tour</h3>
 						<p class="mb-0">Kami menyediakan tour domestik/internasional dengan destinasi wisata yang paling papuler.</p>
 					</div>
 				</div>
@@ -163,7 +163,7 @@
 				<div class="feature-1 ">
 					<div class="align-self-center">
 						<span class="flaticon-restaurant display-4 text-primary"></span>
-						<h3>Open Trip</h3>
+						<h3>Event Organizer</h3>
 						<p class="mb-0">Semakin banyaknya permintaan dari client kami menyediakan Open trip bagi siapapun.</p>
 					</div>
 				</div>
@@ -175,7 +175,7 @@
 				<div class="feature-1 d-md-flex">
 					<div class="align-self-center">
 						<span class="flaticon-mail display-4 text-primary"></span>
-						<h3>Private Trip</h3>
+						<h3>Akomodasi</h3>
 						<p class="mb-0">Kami menyediakan Private Trip bagi anda yang ingin merayakan hari bahagia.</p>
 					</div>
 				</div>
@@ -183,7 +183,7 @@
 				<div class="feature-1 d-md-flex">
 					<div class="align-self-center">
 						<span class="flaticon-phone-call display-4 text-primary"></span>
-						<h3>Outbound</h3>
+						<h3>Transportasi</h3>
 						<p class="mb-0">Kami menyediakan tempat Outbound untuk mengisi liburan bahagia client.</p>
 					</div>
 				</div>
@@ -240,7 +240,7 @@
 			<div class="col-lg-12 text-center">
 				<h2 class="section-title text-center mb-5">Testimonials</h2>
 
-				<div class="owl-single owl-carousel no-nav">
+				<div class="owl-3-slider owl-carousel no-nav">
 					<div class="testimonial mx-auto">
 						<figure class="img-wrap">
 							<img src="images/person_2.jpg" alt="Image" class="img-fluid">

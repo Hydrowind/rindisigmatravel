@@ -25,7 +25,7 @@
           <div class="widget">
             <h3 class="heading"><b>Produk</b></h3>
             <ul class="links list-unstyled">
-              <li><a href="{{ route('tour') }}">Tour</a></li>
+              <li><a href="{{ route('product') }}">Tour</a></li>
               <li><a href="https://wa.me/+6282158751381">Pesan Tiket</a></li>
               <li><a href="https://wa.me/+6282158751381">Sewa Mobil</a></li>
               <li><a href="https://wa.me/+6282158751381" target="_blank">Buat Event</a></li>
@@ -37,7 +37,7 @@
             <h3 class="heading"><b>Eksplor</b></h3>
             <ul class="links list-unstyled">
               <li><a href="{{ route('blog') }}">Blog</a></li>
-              <li><a href="{{ route('about') }}">Tentang Kami</a></li>
+              <li><a href="{{ route('contact') }}">Tentang Kami</a></li>
             </ul>
           </div>
         </div>

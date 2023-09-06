@@ -166,12 +166,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   position: fixed;
   top: 0;
   z-index: 9;
-  width: 100%; 
+  /* width: 100%; */
 }
 
 .site-nav.scrolled {
   /* background-color: #1A374D !important; */
-  background-color: rgba(26, 55, 77, 0.75) !important;
+  background-color: rgba(50, 60, 70, 0.710) !important;
   transition: background-color 200ms linear;
   z-index: 9;
 }
@@ -188,7 +188,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     .site-nav .site-navigation .site-menu > li {
       display: inline-block; }
       .site-nav .site-navigation .site-menu > li > a {
-        font-size: 14px;
+        font-size: 20px;
         padding: 10px 15px;
         display: inline-block;
         text-decoration: none !important;
@@ -559,26 +559,29 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   outline: none; }
 
 .hero {
-  padding: 7rem 0 10rem 0;
+  padding: 7rem 0 2rem 0;
   background: #6998AB;
-  margin-bottom: 100px; 
-  position: relative; }
+  margin-bottom: 100px;
+  position: relative;
+  }
   .hero.hero-inner {
-    padding: 9rem 0 7rem 0;
+    padding: 7rem 0 rem 0;
     margin-bottom: auto;
     background-image: url('../images/product-5.jpg');
     background-size: cover;
-    background-attachment: fixed; 
-    background-position: center center; }
+    background-attachment: fixed;
+    background-position: center center;
+    }
   .hero.hero-inner::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1; }
+    height: 2;
+    background-color: rgba(10, 0, 0, 0.5);
+    z-index: 1;
+    }
   .hero h1 {
     color: #ffffff;
     font-size: 60px; }
@@ -597,12 +600,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         content: ""; }
   .hero .intro-wrap {
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    }
 
   .slides {
     padding: 15rem 0rem 15rem 0;
     background: #6998AB;
-    margin-bottom: 100px; 
+    margin-bottom: 25px; 
     position: relative; }
   .slides::after {
     content: "";
@@ -631,7 +635,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       z-index: 1; }
 
 .untree_co-section {
-  padding: 70px 0; }
+  padding: 20px 0;
+  }
 
 .media-thumb {
   position: relative;
@@ -1431,3 +1436,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       content: "\f095"; }
     .site-footer ul.quick-info li.address:before {
       content: "\e8b4"; }
+
+.widget-sidebar{
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+}

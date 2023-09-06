@@ -181,7 +181,7 @@ $(function(){
 				margin: 20,
 				autoplay: true,
 				smartSpeed: 800,
-				items: 3,
+				items: 1,
 				nav: false,
 				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
 				onInitialized: counter
@@ -207,6 +207,50 @@ $(function(){
 			});
 
 			owl.on('changed.owl.carousel', function(event) {
+				var i = event.item.index;
+				if ( i === 1 ) {
+					i = event.item.count;
+				} else {
+					i = i - 1;
+				}
+				$('.owl-current').text(i);
+				$('.owl-total').text(event.item.count);
+			})
+		}
+
+		if ( $('.owl-3-slider').length > 0 ) {
+			var owl3 = $('.owl-3-slider').owlCarousel({
+				loop: true,
+				autoHeight: true,
+				margin: 20,
+				autoplay: true,
+				smartSpeed: 800,
+				items: 3,
+				nav: false,
+				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
+				onInitialized: counter
+			});
+
+			function counter(event) {
+				$('.owl-total').text(event.item.count);
+			}
+			
+			$('.js-custom-owl-next').click(function(e) {
+				e.preventDefault();
+				owl3.trigger('next.owl.carousel');
+				owlText.trigger('next.owl.carousel');
+			})
+			$('.js-custom-owl-prev').click(function(e) {
+				e.preventDefault();
+				owl3.trigger('prev.owl.carousel');
+				owlText.trigger('prev.owl.carousel');
+			})
+
+			$('.owl-dots .owl-dot').each(function(i) {
+				$(this).attr('data-index', i - 3);
+			});
+
+			owl3.on('changed.owl.carousel', function(event) {
 				var i = event.item.index;
 				if ( i === 1 ) {
 					i = event.item.count;

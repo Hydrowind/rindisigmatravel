@@ -10,16 +10,16 @@ class PageController extends Controller
         return view('home');
     }
 
-    public function tour(){
-        return view('tour');
+    public function product(){
+        return view('product');
     }
 
     public function blog(){
         return view('blog');
     }
 
-    public function about(){
-        return view('about');
+    public function contact(){
+        return view('contact');
     }
 
     public function detail(){

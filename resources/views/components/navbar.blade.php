@@ -16,11 +16,11 @@
       <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
         <li class="active"><a href="/">Home</a></li>
         <li class="has-children">
-          <a href="{{ route('product') }}">Product</a>
+          <a href="{{ route('product', ['filter' => 'tour']) }}"">Product</a>
           <ul class="dropdown">
-            <li><a href="#">Paket Tour</a></li>
-            <li><a href="#">Event Organizer</a></li>
-            <li><a href="#">Akomodasi</a></li>
+            <li><a href="{{ route('product', ['filter' => 'tour']) }}">Paket Tour</a></li>
+            <li><a href="{{ route('product', ['filter' => 'event']) }}">Event Organizer</a></li>
+            <li><a href="{{ route('product', ['filter' => 'akomodasi']) }}">Akomodasi</a></li>
             <!-- <li class="has-children">
               <a href="#">Akomodasi</a>
               <ul class="dropdown">
@@ -29,7 +29,7 @@
                 <li><a href="#">Sub Menu Three</a></li>
               </ul>
             </li> -->
-            <li><a href="#">Transportasi</a></li>
+            <li><a href="{{ route('product', ['filter' => 'transportasi']) }}">Transportasi</a></li>
           </ul>
         </li>
         <!-- <li><a href="{{ route('blog') }}">Blog</a></li> -->

@@ -153,19 +153,19 @@
 			<div class="col-12 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1" >
 
 				<div class="feature-1 d-md-flex">
-					<div class="align-self-center">
+					<a class="align-self-center" href="{{ route('product', ['filter' => 'tour']) }}"">
 						<span class="flaticon-house display-4 text-primary"></span>
 						<h3>Paket Tour</h3>
 						<p class="mb-0">Kami menyediakan tour domestik/internasional dengan destinasi wisata yang paling papuler.</p>
-					</div>
+					</a>
 				</div>
 
 				<div class="feature-1 ">
-					<div class="align-self-center">
+					<a class="align-self-center" href="{{ route('product', ['filter' => 'event']) }}"">
 						<span class="flaticon-restaurant display-4 text-primary"></span>
 						<h3>Event Organizer</h3>
 						<p class="mb-0">Semakin banyaknya permintaan dari client kami menyediakan Open trip bagi siapapun.</p>
-					</div>
+					</a>
 				</div>
 
 			</div>
@@ -173,19 +173,19 @@
 			<div class="col-12 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3 mt-4 mt-sm-0" >
 
 				<div class="feature-1 d-md-flex">
-					<div class="align-self-center">
+					<a class="align-self-center" href="{{ route('product', ['filter' => 'akomodasi']) }}"">
 						<span class="flaticon-mail display-4 text-primary"></span>
 						<h3>Akomodasi</h3>
 						<p class="mb-0">Kami menyediakan Private Trip bagi anda yang ingin merayakan hari bahagia.</p>
-					</div>
+					</a>
 				</div>
 
 				<div class="feature-1 d-md-flex">
-					<div class="align-self-center">
+					<a class="align-self-center" href="{{ route('product', ['filter' => 'transportasi']) }}"">
 						<span class="flaticon-phone-call display-4 text-primary"></span>
 						<h3>Transportasi</h3>
 						<p class="mb-0">Kami menyediakan tempat Outbound untuk mengisi liburan bahagia client.</p>
-					</div>
+					</a>
 				</div>
 
 			</div>

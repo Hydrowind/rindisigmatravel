@@ -60,10 +60,10 @@
 <div class="untree_co-section">
   <div class="container">
     <div class="row">
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Paket Tour</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Event Organizer</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Akomodasi</a>
-      <a href="#" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Transport</a>
+      <a href="{{ route('product', ['filter' => 'tour']) }}"" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Paket Tour</a>
+      <a href="{{ route('product', ['filter' => 'event']) }}"" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Event Organizer</a>
+      <a href="{{ route('product', ['filter' => 'akomodasi']) }}"" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Akomodasi</a>
+      <a href="{{ route('product', ['filter' => 'transportasi']) }}"" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Transportasi</a>
     </div>
   </div>
 </div>
@@ -72,6 +72,8 @@
   <div class="container">
     <div class="row">
 
+      @if(request()->get('filter') == 'tour')
+      <!-- TOUR -->
       <div class="col-12 col-md-6 col-lg-3 mt-4">
         <div class="media-1">
           <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-1.jpg" alt="Image" class="w-100 img-fluid"></a>
@@ -139,6 +141,116 @@
           </div>
         </div>
       </div>
+
+
+      @elseif(request()->get('filter') == 'event')
+      <!-- EVENT ORGANIZER -->
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-3.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">1 DAY TRIP EVENT</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Dufan</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-4.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Chatay Pacific</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      @elseif(request()->get('filter') == 'akomodasi')
+      <!-- AKOMODASI -->
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-3.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">1 DAY TRIP AKOMODASI</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Dufan</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-4.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Chatay Pacific</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      @elseif(request()->get('filter') == 'transportasi')
+      <!-- TRANSPORTASI -->
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-3.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">1 DAY TRIP TRANSPORTASI</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Dufan</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3 mt-4">
+        <div class="media-1">
+          <a href="{{ route('detail') }}" class="d-block mb-3"><img src="images/product-4.jpg" alt="Image" class="w-100 img-fluid"></a>
+          <div class="d-flex">
+            <div class="p-3">
+              <h3><a href="{{ route('detail') }}">11 DAY 6 NEGARA CHATAY PACIFIC</a></h3>
+              <div class="d-flex flex-column text-black-50">
+                <p class="m-0"><i class="icon-clock-o"></i> 25-09-2023</p>
+                <p><i class="icon-add_location"></i> Chatay Pacific</p>
+              </div>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      @endif
 
     </div>
   </div>

@@ -12,7 +12,7 @@
       <div class="col-lg-7">
         <div class="intro-wrap">
           <h1 class="mb-5"><span class="d-block">Let's Enjoy Your</span> Trip In <span class="typed-words"></span></h1>
-					<a href="{{ route('product') }}" class="btn btn-outline-white text-white btn-md font-weight-bold">View Tours</a>
+					<a href="{{ route('product', ['filter' =>'tour']) }}" class="btn btn-outline-white text-white btn-md font-weight-bold">View Tours</a>
           {{-- @include('components.search') --}}
         </div>
       </div>

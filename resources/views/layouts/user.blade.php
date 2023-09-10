@@ -74,7 +74,7 @@
 			})
 
 			var typed = new Typed('.typed-words', {
-				strings: [" Japan."," Paris."," Dubai.", " Maui.", " London."],
+				strings: [" DUFAN."," YOGYAKARTA."," LABUAN BAJO.", " BALI.", " Southeast Asia."],
 				typeSpeed: 80,
 				backSpeed: 80,
 				backDelay: 4000,

@@ -2,11 +2,11 @@
 
 @section('hero')
 <div class="hero slides">
-	<img src="images/hero-slider-1-ls.jpg" alt="Image" class="img-fluid active">
-	<img src="images/hero-slider-2-ls.jpg" alt="Image" class="img-fluid">
-	<img src="images/hero-slider-3-ls.jpg" alt="Image" class="img-fluid">
-	<img src="images/hero-slider-4-ls.jpg" alt="Image" class="img-fluid">
-	<img src="images/hero-slider-5-ls.jpg" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-1-ls.png" alt="Image" class="img-fluid active">
+	<img src="images/hero-slider-2-ls.png" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-3-ls.png" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-4-ls.png" alt="Image" class="img-fluid">
+	<img src="images/hero-slider-5-ls.png" alt="Image" class="img-fluid">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-7">
@@ -31,37 +31,36 @@
 
 		<div class="owl-carousel owl-3-slider">
 			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-1-ls.jpg" data-fancybox="gallery">
+				<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
 					<div class="media-text">
-						<h3>Pragser Wildsee</h3>
-						<span class="location">Italy</span>
+						<h3>DUNIA FANTASI (DUFAN)</h3>
+						<span class="location">Jakarta</span>
 					</div>
-					<img src="images/hero-slider-1-ls.jpg" alt="Image" class="img-fluid" height="500px">
+					<img src="images/hero-slider-1.jpg" alt="Image" class="img-fluid" height="500px">
 				</a> 
 			</div>
 
 			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-2-ls.jpg" data-fancybox="gallery">
+				<a class="media-thumb" href="images/hero-slider-2.jpg" data-fancybox="gallery">
 					<div class="media-text">
-						<h3>Oia</h3>
-						<span class="location">Greece</span>
+						<h3>BANDUNG</h3>
+						<span class="location">Bandung</span>
 					</div>
-					<img src="images/hero-slider-2-ls.jpg" alt="Image" class="img-fluid">
+					<img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
 				</a> 
 			</div>
 
 			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-3-ls.jpg" data-fancybox="gallery">
+				<a class="media-thumb" href="images/hero-slider-3.jpg" data-fancybox="gallery">
 					<div class="media-text">
-						<h3>Perhentian Islands</h3>
-						<span class="location">Malaysia</span>
+						<h3>TURKEY</h3>
+						<span class="location">Turkey</span>
 					</div>
-					<img src="images/hero-slider-3-ls.jpg" alt="Image" class="img-fluid">
+					<img src="images/hero-slider-3.jpg" alt="Image" class="img-fluid">
 				</a> 
 			</div>
 
-
-			<div class="item">
+			<!-- <div class="item">
 				<a class="media-thumb" href="images/hero-slider-4-ls.jpg" data-fancybox="gallery">
 					<div class="media-text">
 						<h3>Rialto Bridge</h3>
@@ -89,7 +88,7 @@
 					</div>
 					<img src="images/hero-slider-1-ls.jpg" alt="Image" class="img-fluid">
 				</a> 
-			</div>
+			</div> -->
 
 		</div>
 
@@ -193,6 +192,7 @@
 		</div>
 	</div>
 </div>
+<br></br>
 
 <!-- <div class="untree_co-section count-numbers py-5">
 	<div class="container">
@@ -234,7 +234,7 @@
 </div> -->
 
 <!-- Testimonials -->
-<div class="untree_co-section mt-5">
+<!-- <div class="untree_co-section mt-5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-12 text-center">
@@ -278,7 +278,7 @@
 	</div>
 </div>
 
-<!-- <div class="untree_co-section">
+<div class="untree_co-section">
 	<div class="container">
 		<div class="row justify-content-center text-center mb-5">
 			<div class="col-lg-6">
@@ -413,9 +413,9 @@
 	<div class="container">
 		<div class="row text-center">
 			<div class="col-md-12">
-				<h2 class="mb-2 text-white">Lets you Explore the Best. Contact Us Now</h2>
-				<p class="mb-4 lead text-white text-white-opacity">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fugit?</p>
-				<p class="mb-0"><a href="https://wa.me/+6281218680145" target="_blank" class="btn btn-outline-white text-white btn-md font-weight-bold"><span class="icon-whatsapp"></span> WhatsApp</a></p>
+				<h2 class="mb-2 text-white">Rasakan Pengalaman Menyenangkan dan Kemudahan Dalam Perjalanan. Hubungi kami sekarang</h2>
+				<!-- <p class="mb-4 lead text-white text-white-opacity">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fugit?</p> -->
+				<br></br><p class="mb-0"><a href="https://wa.me/+6281218680145" target="_blank" class="btn btn-outline-white text-white btn-md font-weight-bold"><span class="icon-whatsapp"></span> WhatsApp</a></p>
 			</div>
 		</div>
 	</div>

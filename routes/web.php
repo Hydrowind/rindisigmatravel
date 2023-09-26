@@ -5,6 +5,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\RegionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +36,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
   Route::get('report', [ReportController::class, 'index'])->middleware('superadmin')->name('report');
   Route::get('export', [ReportController::class, 'exportPDF'])->middleware('superadmin')->name('export');
   Route::resources([
-      'books'         => BookController::class,
-      'transactions'  => TransactionController::class,
-      'students'      => StudentController::class,
+      'product'   => ProductController::class,
+      'post'      => PostController::class,
+      'region'    => RegionController::class,
   ]);
   Route::resource('users', UserController::class)->middleware('superadmin');
 });

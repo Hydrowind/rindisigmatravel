@@ -32,7 +32,7 @@ class ProductController extends Controller
         $data = new Product();
 
         $data->name = $request->get('name');
-        $data->cover_image = $request->get('cover_image');
+        
         $data->description = $request->get('description');
         $data->price = $request->get('price');
         $data->rating = $request->get('rating');
@@ -43,6 +43,13 @@ class ProductController extends Controller
         $data->end_date = $request->get('end_date');
         $data->type = $request->get('type');
         // $data->region = $request->get('region');
+
+        if($request->hasFile('cover_image')){
+            $file = $request->file('cover_image');
+            $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads', $filename);
+            $data->cover_image = '/uploads/' . $filename;
+        }
 
         if($data->save()){
             return redirect()->route('product.index');

@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RegionController;
@@ -23,7 +24,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('product', [PageController::class, 'product'])->name('product');
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
-Route::get('detail', [PageController::class, 'detail'])->name('detail');
+Route::get('detail/product/{id}', [PageController::class, 'detail_product'])->name('detail.product');
+Route::get('detail/blog/{id}', [PageController::class, 'detail_blog'])->name('detail.blog');
 
 Route::controller(AuthController::class)->group(function() {
   Route::get('login', 'login')->name('login');
@@ -36,6 +38,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
   Route::get('report', [ReportController::class, 'index'])->middleware('superadmin')->name('report');
   Route::get('export', [ReportController::class, 'exportPDF'])->middleware('superadmin')->name('export');
   Route::resources([
+      'user'      => UserController::class,
       'product'   => ProductController::class,
       'post'      => PostController::class,
       'region'    => RegionController::class,

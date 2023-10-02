@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\User;
 
-class PostController extends Controller
+use Illuminate\Support\Facades\Hash;
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.post.index', ['data' => Post::all()]);
+        return view('admin.user.index', ['data' => User::all()]);
     }
 
     /**
@@ -21,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.post.create');
+        return view('admin.user.create');
     }
 
     /**
@@ -29,16 +31,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Post();
+        $data = new User();
 
-        $data->title = $request->get('title');
-        $data->cover_image = $request->get('cover_image');
-        $data->content = $request->get('content');
-        $data->rating = $request->get('rating');
-        
+        $data->name = $request->get('name');
+        $data->email = $request->get('email');
+        $data->password = Hash::make($request->get('password'));
+        $data->role = $request->get('role');
 
         if($data->save()){
-            return redirect()->route('post.index');
+            return redirect()->route('user.index');
         } else {
             return back()->withInput(Input::all());
         }
@@ -50,7 +51,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.post.detail');
+        return view('admin.user.detail');
     }
 
     /**
@@ -58,7 +59,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.post.edit', ['data' => Post::find($id)]);
+        return view('admin.user.edit', ['data' => User::find($id)]);
     }
 
     /**
@@ -66,15 +67,15 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = Post::find($id);
+        $data = User::find($id);
 
-        $data->title = $request->get('title');
-        $data->cover_image = $request->get('cover_image');
-        $data->content = $request->get('content');
-        $data->rating = $request->get('rating');
+        $data->name = $request->get('name');
+        $data->email = $request->get('email');
+        $data->password = $request->get('password');
+        $data->role = $request->get('role');
 
         if($data->save()){
-            return redirect()->route('post.index');
+            return redirect()->route('user.index');
         } else {
             return back()->withInput(Input::all());
         }
@@ -85,7 +86,7 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        Post::destroy($id);
-        return redirect()->route('post.index');
+        User::destroy($id);
+        return redirect()->route('user.index');
     }
 }

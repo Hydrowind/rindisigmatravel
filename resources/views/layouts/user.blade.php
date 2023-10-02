@@ -29,6 +29,9 @@
 	<link rel="stylesheet" href="/css/aos.css">
 	<link rel="stylesheet" href="/css/style.css">
 
+	<!-- Summernote CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
 	<title>{{ env('APP_NAME', 'Rindi Sigma') }}</title>
 </head>
 
@@ -104,6 +107,9 @@
 
 	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 	<script src="/js/custom.js"></script>
+
+	<!-- Summernote JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </body>
 
 </html>

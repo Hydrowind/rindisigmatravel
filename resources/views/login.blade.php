@@ -41,7 +41,9 @@
 										<!-- <img src="img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" /> -->
 										<h1 class="h2">Admin Login</h1>
 									</div>
-									<form>
+									<form action="{{ route('signin') }}" method="post">
+										@csrf
+										
 										<div class="mb-3">
 											<label class="form-label">Email</label>
 											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
@@ -49,9 +51,9 @@
 										<div class="mb-3">
 											<label class="form-label">Password</label>
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
-											<small>
+											<!-- <small>
 												<a href="index.html">Forgot password?</a>
-											</small>
+											</small> -->
 										</div>
 										<!-- <div>
 											<label class="form-check">
@@ -62,8 +64,7 @@
 											</label>
 										</div> -->
 										<div class="text-center mt-3">
-											<a href="{{ route('admin.dashboard') }}" class="btn btn-lg btn-primary">Sign in</a>
-											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
 										</div>
 									</form>
 								</div>

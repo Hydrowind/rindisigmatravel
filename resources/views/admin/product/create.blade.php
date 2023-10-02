@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="h3 mb-3"><strong>Insert</strong> New Product</h1>
 
-<form class="card" action="{{ route('product.store') }}" method="post">
+<form class="card" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
   @csrf
   <!-- <div class="card-header">
     <h5 class="card-title mb-0">Add New Product</h5>
@@ -12,7 +12,7 @@
     <input type="text" class="form-control" name="name" placeholder="Wisata Bali 3D1N">
 
     <label class="form-label mt-3">Cover Image</label>
-    <input type="text" class="form-control" name="cover_image" placeholder="http://image.io/7uc54z.jpg">
+    <input type="file" class="form-control" name="cover_image" placeholder="http://image.io/7uc54z.jpg">
 
     <div class="row mt-3">
       <div class="col-6">
@@ -47,6 +47,9 @@
       </div>
     </div>
 
+    <label class="form-label mt-3">Duration</label>
+    <input type="text" class="form-control" name="duration" placeholder="2D1N">
+
     <label class="form-label mt-3">Type</label>
     <select name="type" class="form-select">
       <option value="0">Tour</option>
@@ -56,9 +59,18 @@
     </select>
     
     <label class="form-label mt-3">Description</label>
-    <input type="text" class="form-control" name="description" placeholder="Ketik deskripsi produk disini">
+    <textarea name="description" class="form-control" id="summernote"></textarea>
+    <!-- <input type="text" class="form-control" name="description" placeholder="Ketik deskripsi produk disini"> -->
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>
   </div>
 </form>
+
+<script>
+    $(document).ready(function () {
+        $('#summernote').summernote({
+            height: 300, // Set the height of the editor
+        });
+    });
+</script>
 @endsection

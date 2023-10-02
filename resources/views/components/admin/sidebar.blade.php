@@ -22,6 +22,12 @@
       </li> -->
 
       <li class="sidebar-item">
+        <a class="sidebar-link" href="{{ route('user.index') }}" >
+          <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item">
         <a class="sidebar-link" href="{{ route('product.index') }}" >
           <i class="align-middle" data-feather="package"></i> <span class="align-middle">Product</span>
         </a>
@@ -33,11 +39,11 @@
         </a>
       </li>
       
-      <li class="sidebar-item">
+      <!-- <li class="sidebar-item">
         <a class="sidebar-link" href="{{ route('region.index') }}">
           <i class="align-middle" data-feather="flag"></i> <span class="align-middle">Region</span>
         </a>
-      </li>
+      </li> -->
 
       <li class="sidebar-header">
         Settings

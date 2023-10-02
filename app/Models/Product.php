@@ -9,6 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
+    const TYPE_TOUR = 0;
+    const TYPE_ACCOMMODATION = 1;
+    const TYPE_EVENT_ORGANIZER = 2;
+    const TYPE_TRANSPORTATION = 3;
+
     protected $fillable = [
         'name',
         'cover_image',

@@ -35,8 +35,8 @@ class PageController extends Controller
         return view('blog', ['posts' => $posts]);
     }
 
-    public function contact(){
-        return view('contact');
+    public function about(){
+        return view('about');
     }
 
     public function detail_product(Request $request, string $id){

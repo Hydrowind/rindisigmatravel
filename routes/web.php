@@ -23,7 +23,7 @@ use App\Http\Controllers\Admin\RegionController;
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('product', [PageController::class, 'product'])->name('product');
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
-Route::get('contact', [PageController::class, 'contact'])->name('contact');
+Route::get('about', [PageController::class, 'about'])->name('about');
 Route::get('detail/product/{id}', [PageController::class, 'detail_product'])->name('detail.product');
 Route::get('detail/blog/{id}', [PageController::class, 'detail_blog'])->name('detail.blog');
 

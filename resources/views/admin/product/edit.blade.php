@@ -14,8 +14,12 @@
     <label class="form-label mt-3">Product Name</label>
     <input type="text" class="form-control" name="name" placeholder="Wisata Bali 3D1N" value="{{ $data->name }}">
 
+    @if( $data->cover_image )
+    <img src="{{ $data->cover_image }}" alt="Cover Image" width="200px;" class="d-block mt-3">
+    @endif
+
     <label class="form-label mt-3">Cover Image</label>
-    <input type="text" class="form-control" name="cover_image" placeholder="http://image.io/7uc54z.jpg"  value="{{ $data->cover_image }}">
+    <input type="file" class="form-control" name="cover_image">
 
     <div class="row mt-3">
       <div class="col-6">

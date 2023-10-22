@@ -37,7 +37,7 @@
             <h3 class="heading"><b>Eksplor</b></h3>
             <ul class="links list-unstyled">
               <li><a href="{{ route('blog') }}">Blog</a></li>
-              <li><a href="{{ route('contact') }}">Tentang Kami</a></li>
+              <li><a href="{{ route('about') }}">Tentang Kami</a></li>
             </ul>
           </div>
         </div>

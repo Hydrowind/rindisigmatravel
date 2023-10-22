@@ -60,10 +60,17 @@
 <div class="untree_co-section">
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <a href="{{ route('product', ['filter' => 'tour']) }}" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Paket Tour</a>
-      <a href="{{ route('product', ['filter' => 'akomodasi']) }}" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Akomodasi</a>
-      <a href="{{ route('product', ['filter' => 'event']) }}" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Event Organizer</a>
-      <a href="{{ route('product', ['filter' => 'transportasi']) }}" class="btn btn-primary col-12 col-md-2 mx-1 my-1">Transportasi</a>
+      <a href="{{ route('product', ['filter' => 'tour']) }}" 
+        class="btn @if($_GET['filter'] == 'tour') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Paket Tour</a>
+      
+      <a href="{{ route('product', ['filter' => 'akomodasi']) }}"
+        class="btn @if($_GET['filter'] == 'akomodasi') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Akomodasi</a>
+      
+      <a href="{{ route('product', ['filter' => 'event']) }}"
+        class="btn @if($_GET['filter'] == 'event') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Event Organizer</a>
+      
+      <a href="{{ route('product', ['filter' => 'transportasi']) }}"
+        class="btn @if($_GET['filter'] == 'transportasi') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Transportasi</a>
     </div>
   </div>
 </div>

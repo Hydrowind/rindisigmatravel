@@ -169,19 +169,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   position: fixed;
   top: 0;
   z-index: 9;
+  background-color: white;
   /* width: 100%; */
 }
 
 .site-nav.scrolled {
   /* background-color: #1A374D !important; */
-  background-color: rgba(50, 60, 70, 0.710) !important;
+  /* background-color: rgba(50, 60, 70, 0.710) !important; */
+  background-color: rgb(255, 255, 255) !important;
   transition: background-color 200ms linear;
   z-index: 9;
 }
 
 .site-nav {
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  /* background-color: white; */
+  /* color: black !important; */
+  }
   .site-nav h1 {
     margin: 0;
     padding: 0;
@@ -195,20 +200,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         padding: 10px 15px;
         display: inline-block;
         text-decoration: none !important;
-        color: rgba(255, 255, 255, 0.7); }
+        color: rgba(0, 0, 0, 0.7); }
         .site-nav .site-navigation .site-menu > li > a:hover {
-          color: #ffffff; }
+          color: #000000; }
       .site-nav .site-navigation .site-menu > li.cta-button a {
         padding: 6px 20px;
         border: 2px solid rgba(255, 255, 255, 0.1);
-        color: #000000;
+        color: #ffffff;
         border-radius: 30px; }
         .site-nav .site-navigation .site-menu > li.cta-button a:hover {
           color: #000000;
           background: #1A374D;
           border-color: #1A374D; }
       .site-nav .site-navigation .site-menu > li.active > a {
-        color: #ffffff; }
+        color: #000000; }
     .site-nav .site-navigation .site-menu .has-children {
       position: relative; }
       .site-nav .site-navigation .site-menu .has-children > a {
@@ -237,7 +242,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
         padding: 20px 0;
         margin-top: 20px;
         margin-left: 0px;
-        background: #ffffff;
+        background: #000000;
         -webkit-transition: 0.2s 0s;
         -o-transition: 0.2s 0s;
         transition: 0.2s 0s; }
@@ -256,7 +261,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
           .site-nav .site-navigation .site-menu .has-children .dropdown.arrow-top:before {
             display: none;
             border-color: rgba(136, 183, 213, 0);
-            border-bottom-color: #ffffff;
+            border-bottom-color: #000000;
             border-width: 10px;
             margin-left: -10px; }
         .site-nav .site-navigation .site-menu .has-children .dropdown a {
@@ -266,9 +271,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
           -webkit-transition: 0s all;
           -o-transition: 0s all;
           transition: 0s all;
-          color: #000000; }
+          color: #ffffff; }
         .site-nav .site-navigation .site-menu .has-children .dropdown .active a {
-          color: #1A374D !important; }
+          /* color: #1A374D !important; } */
+          color: #9fc1da !important; }
         .site-nav .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -278,7 +284,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
             padding: 5px 20px;
             display: block; }
             .site-nav .site-navigation .site-menu .has-children .dropdown > li > a:hover {
-              color: #1A374D; }
+              /* color: #1A374D; } */
+              color: #9fc1da; }
           .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children > a:before {
             content: "\e315";
             right: 20px; }
@@ -286,11 +293,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
             left: 100%;
             top: 0; }
             .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children > .dropdown li a:hover, .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children > ul li a:hover {
-              color: #1A374D; }
+              /* color: #1A374D; } */
+              color: #9fc1da; }
           .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children:hover > a, .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children:active > a, .site-nav .site-navigation .site-menu .has-children .dropdown > li.has-children:focus > a {
-            color: #1A374D; }
+            /* color: #1A374D; } */
+            color: #9fc1da; }
       .site-nav .site-navigation .site-menu .has-children:hover > a, .site-nav .site-navigation .site-menu .has-children:focus > a, .site-nav .site-navigation .site-menu .has-children:active > a {
-        color: #ffffff; }
+        color: #000000; }
       .site-nav .site-navigation .site-menu .has-children:hover, .site-nav .site-navigation .site-menu .has-children:focus, .site-nav .site-navigation .site-menu .has-children:active {
         cursor: pointer; }
         .site-nav .site-navigation .site-menu .has-children:hover > .dropdown, .site-nav .site-navigation .site-menu .has-children:focus > .dropdown, .site-nav .site-navigation .site-menu .has-children:active > .dropdown {
@@ -1444,4 +1453,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   padding: 15px;
   border: 1px solid lightgray;
   border-radius: 25px;
+}
+
+#whatsapp-float{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
 }

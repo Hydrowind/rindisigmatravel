@@ -42,6 +42,9 @@
   <!-- Main -->
   <main id="main" style="min-height: 100vh">
     @yield('content')
+
+		<!-- Whatsapp -->
+		<a id="whatsapp-float" class="btn btn-primary font-weight-bold" href="https://wa.me/+6281218680145" target="_blank"><span class="icon-whatsapp"></span> Reservasi Sekarang</a>
   </main>
 
   @include('components.footer')
@@ -55,6 +58,8 @@
 	</div>
   
   <!-- Javascript -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/popper.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -110,6 +115,8 @@
 
 	<!-- Summernote JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+	@yield('script')
 </body>
 
 </html>

@@ -14,16 +14,13 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('cover_image')->nullable();
             $table->text('description')->nullable();
+            $table->text('itinerary')->nullable();
+            $table->text('term_condition')->nullable();
             $table->integer('price')->nullable();
-            $table->integer('rating')->nullable();
-            $table->integer('max_guest')->nullable();
-            $table->integer('min_age')->nullable();
+            $table->integer('min_guest')->nullable();
             $table->string('duration')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
-            $table->tinyInteger('type')->nullable()->comment('0: Domestic, 1: International, 2: Car Rental, 3: Event');
+            $table->string('type')->nullable()->comment('TOUR_DOMESTIC, TOUR_INTERNATIONAL, ACCOMODATION, EVENT, TRANSPORTATION');
 
             $table->timestamps();
         });

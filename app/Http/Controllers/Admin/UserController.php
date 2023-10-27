@@ -38,6 +38,27 @@ class UserController extends Controller
         $data->password = Hash::make($request->get('password'));
         $data->role = $request->get('role');
 
+        $data->save();
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
+            
+            $data->images()->create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => $data->id,
+                'object_id' => $data->id
+            ]);
+
+            $file->move('uploads', $filename);
+        }
+
         if($data->save()){
             return redirect()->route('user.index');
         } else {

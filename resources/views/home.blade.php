@@ -61,13 +61,13 @@
 
 
 <!-- Mereka Yang Percaya Kami / Client Logo -->
-<div class="untree_co-section mt-5">
+<div class="untree_co-section untree_co-section_secondary mt-5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-title text-center mb-5">Mereka Yang Percaya Kami</h2>
 
-				<div class="owl-3-slider owl-carousel no-nav">
+				<div class="owl-5-slider owl-carousel no-nav">
 					<div class="testimonial mx-auto">
 						<figure class="img-wrap">
 							<img src="images/logo.png" alt="Image" class="img-fluid">
@@ -113,13 +113,13 @@
 
 
 <!-- Dokumentasi Tamu -->
-<div class="untree_co-section">
+<div class="untree_co-section ">
 	<div class="container">
 		<div class="row text-center justify-content-center mb-5">
 			<div class="col-lg-7"><h2 class="section-title text-center">Dokumentasi Tamu</h2></div>
 		</div>
 
-		<div class="owl-carousel owl-3-slider">
+		<div class="owl-carousel owl-5-slider">
 			<div class="item">
 				<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
 					<div class="media-text">
@@ -156,7 +156,7 @@
 </div>
 
 <!-- Produk Kami -->
-<div class="untree_co-section">
+<div class="untree_co-section untree_co-section_secondary ">
 	<div class="container">
 		<div class="row mb-5 justify-content-center">
 			<div class="col-lg-6 text-center">
@@ -218,7 +218,7 @@
 </div>
 
 <!-- Kenapa Pilih Rindi -->
-<div class="untree_co-section">
+<div class="untree_co-section ">
 	<div class="container">
 		<div class="row text-center justify-content-center mb-5">
 			<div class="col-lg-7"><h2 class="section-title text-center">Kenapa Pilih Rindi?</h2></div>

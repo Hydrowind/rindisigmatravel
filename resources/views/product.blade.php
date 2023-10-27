@@ -16,6 +16,9 @@
 @endsection
   
 @section('content')
+
+  @php use App\Models\Product; @endphp
+
 <!-- <div class="row">
   <div class="col-12">
     <form class="form">
@@ -60,24 +63,44 @@
 <div class="untree_co-section">
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <a href="{{ route('product', ['filter' => 'tour']) }}" 
-        class="btn @if($_GET['filter'] == 'tour') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Paket Tour</a>
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_TOUR]) }}" 
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_TOUR) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Paket Tour</a>
       
-      <a href="{{ route('product', ['filter' => 'akomodasi']) }}"
-        class="btn @if($_GET['filter'] == 'akomodasi') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Akomodasi</a>
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_ACCOMMODATION]) }}"
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_ACCOMMODATION) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Akomodasi</a>
       
-      <a href="{{ route('product', ['filter' => 'event']) }}"
-        class="btn @if($_GET['filter'] == 'event') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Event Organizer</a>
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_EVENT]) }}"
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_EVENT) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Event Organizer</a>
       
-      <a href="{{ route('product', ['filter' => 'transportasi']) }}"
-        class="btn @if($_GET['filter'] == 'transportasi') btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Transportasi</a>
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_TRANSPORTATION]) }}"
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_TRANSPORTATION) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Transportasi</a>
     </div>
   </div>
 </div>
 
+@if(isset($_GET['filter']) && ($_GET['filter'] == PRODUCT::TYPE_TOUR || $_GET['filter'] == PRODUCT::TYPE_TOUR_DOMESTIC || $_GET['filter'] == PRODUCT::TYPE_TOUR_INTERNATIONAL))
+<div class="untree_co-section">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_TOUR_DOMESTIC]) }}" 
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_TOUR_DOMESTIC) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Domestik</a>
+      
+      <a href="{{ route('product', ['filter' => PRODUCT::TYPE_TOUR_INTERNATIONAL]) }}"
+        class="btn @if(isset($_GET['filter']) && $_GET['filter'] == PRODUCT::TYPE_TOUR_INTERNATIONAL) btn-primary @else btn-outline-primary @endif col-12 col-md-2 mx-1 my-1">Internasional</a>
+    </div>
+  </div>
+</div>
+@endif
+
 <div class="untree_co-section">
   <div class="container">
     <div class="row">
+
+    @if(count($products) == 0)
+    <div class="w-100 h-100">
+      <p class="text-center font-weight-bold">Produk Tidak Ditemukan</p>
+    </div>
+    @endif
 
     @foreach($products as $product)
     <div class="col-12 col-md-6 col-lg-3 mt-4">

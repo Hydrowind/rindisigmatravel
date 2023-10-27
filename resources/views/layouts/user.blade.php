@@ -32,6 +32,10 @@
 	<!-- Summernote CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
+	<!-- Add Bootstrap 5 CSS and JS links -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
 	<title>{{ env('APP_NAME', 'Rindi Sigma') }}</title>
 </head>
 
@@ -109,6 +113,8 @@
 			});
 		});
 	</script>
+
+	
 
 	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 	<script src="/js/custom.js"></script>

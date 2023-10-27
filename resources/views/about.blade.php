@@ -15,7 +15,7 @@
 @endsection
   
 @section('content')
-  <div class="untree_co-section">
+  <!-- <div class="untree_co-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 mt-3">
@@ -32,9 +32,9 @@
           <p class="text-justify">
             <b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga-lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan.
           </p>
-          <!-- Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing. -->
+          Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing.
           
-          <!-- <ul class="list-unstyled two-col clearfix">
+          <ul class="list-unstyled two-col clearfix">
             <li>Outdoor recreation activities</li>
             <li>Airlines</li>
             <li>Car Rentals</li>
@@ -45,11 +45,11 @@
             <li>Package Tours</li>
             <li>Insurance</li>
             <li>Guide Books</li>
-          </ul> -->
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="untree_co-section">
     <div class="container">
@@ -72,6 +72,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-lg-2 mb-4">
           <div class="team">
             <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
@@ -111,6 +112,20 @@
             </div>
           </div>
         </div>
+
+        
+
+        @foreach($users as $user)
+          <div class="col-lg-2 mb-4">
+            <div class="team">
+              <img src="{{ $user->images() }}" alt="{{ $user->images()->alt_text }}" class="img-fluid mb-4 rounded-20">
+              <div class="px-3">
+                <h3 class="mb-0">{{ $user->fullname }}</h3>
+                <p>{{ $user->role }}</p>
+              </div>
+            </div>
+          </div>
+        @endforeach
 
       </div>
 

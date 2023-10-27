@@ -1,3 +1,4 @@
+@php use App\Models\Product; @endphp
 
 <div class="site-mobile-menu site-navbar-target">
   <div class="site-mobile-menu-header">
@@ -18,9 +19,9 @@
         <li class="has-children">
           <a href="{{ route('product') }}"">Product</a>
           <ul class="dropdown">
-            <li><a href="{{ route('product', ['filter' => 'tour']) }}">Paket Tour</a></li>
-            <li><a href="{{ route('product', ['filter' => 'event']) }}">Event Organizer</a></li>
-            <li><a href="{{ route('product', ['filter' => 'akomodasi']) }}">Akomodasi</a></li>
+            <li><a href="{{ route('product', ['filter' => Product::TYPE_TOUR]) }}">Paket Tour</a></li>
+            <li><a href="{{ route('product', ['filter' => Product::TYPE_EVENT]) }}">Event Organizer</a></li>
+            <li><a href="{{ route('product', ['filter' => Product::TYPE_ACCOMMODATION]) }}">Akomodasi</a></li>
             <!-- <li class="has-children">
               <a href="#">Akomodasi</a>
               <ul class="dropdown">
@@ -29,11 +30,11 @@
                 <li><a href="#">Sub Menu Three</a></li>
               </ul>
             </li> -->
-            <li><a href="{{ route('product', ['filter' => 'transportasi']) }}">Transportasi</a></li>
+            <li><a href="{{ route('product', ['filter' => Product::TYPE_TRANSPORTATION]) }}">Transportasi</a></li>
           </ul>
         </li>
         <li><a href="{{ route('blog') }}">Blog</a></li>
-        <li><a href="{{ route('about') }}">Abouts Us</a></li>
+        <li><a href="{{ route('about') }}">About Us</a></li>
       </ul>
 
       <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">

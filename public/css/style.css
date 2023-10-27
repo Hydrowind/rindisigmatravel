@@ -36,7 +36,8 @@ a {
   color: #1A374D;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
-  transition: .3s all ease; }
+  transition: .3s all ease;
+  }
   a:hover {
     color: #1A374D;
     text-decoration: none; }
@@ -512,7 +513,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   cursor: pointer;
   position: relative; }
   .burger.light:before, .burger.light span, .burger.light:after {
-    background: #ffffff; }
+    background: #000;
+    }
 
 .burger:before, .burger span, .burger:after {
   width: 100%;
@@ -558,12 +560,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .burger.active:before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5);
   /*for IE*/ }
-
-.burger.active:after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
+  
+  .burger.active:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5);
   /*for IE*/ }
 
@@ -649,6 +653,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .untree_co-section {
   padding: 20px 0;
   }
+
+.untree_co-section_secondary {
+  background: #f8f9fa;
+}
 
 .media-thumb {
   position: relative;

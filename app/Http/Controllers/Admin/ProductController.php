@@ -32,24 +32,21 @@ class ProductController extends Controller
         $data = new Product();
 
         $data->name = $request->get('name');
-        
         $data->description = $request->get('description');
+        $data->itinerary = $request->get('itinerary');
+        $data->term_condition = $request->get('term_condition');
         $data->price = $request->get('price');
-        $data->rating = $request->get('rating');
-        $data->max_guest = $request->get('max_guest');
-        $data->min_age = $request->get('min_age');
+        $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
-        $data->start_date = $request->get('start_date');
-        $data->end_date = $request->get('end_date');
         $data->type = $request->get('type');
         // $data->region = $request->get('region');
 
-        if($request->hasFile('cover_image')){
-            $file = $request->file('cover_image');
-            $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
-            $file->move('uploads', $filename);
-            $data->cover_image = '/uploads/' . $filename;
-        }
+        // if($request->hasFile('cover_image')){
+        //     $file = $request->file('cover_image');
+        //     $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
+        //     $file->move('uploads', $filename);
+        //     $data->cover_image = '/uploads/' . $filename;
+        // }
 
         if($data->save()){
             return redirect()->route('product.index');
@@ -83,17 +80,13 @@ class ProductController extends Controller
         $data = Product::find($id);
 
         $data->name = $request->get('name');
-        $data->cover_image = $request->get('cover_image');
         $data->description = $request->get('description');
+        $data->itinerary = $request->get('itinerary');
+        $data->term_condition = $request->get('term_condition');
         $data->price = $request->get('price');
-        $data->rating = $request->get('rating');
-        $data->max_guest = $request->get('max_guest');
-        $data->min_age = $request->get('min_age');
+        $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
-        $data->start_date = $request->get('start_date');
-        $data->end_date = $request->get('end_date');
         $data->type = $request->get('type');
-        // $data->region = $request->get('region');
 
         if($data->save()){
             return redirect()->route('product.index');

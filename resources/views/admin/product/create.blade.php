@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 @section('content')
+
+@php use App\Models\Product; @endphp
 <h1 class="h3 mb-3"><strong>Insert</strong> New Product</h1>
 
 <form class="card" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
@@ -11,8 +13,8 @@
     <label class="form-label mt-3">Product Name</label>
     <input type="text" class="form-control" name="name" placeholder="Wisata Bali 3D1N">
 
-    <label class="form-label mt-3">Cover Image</label>
-    <input type="file" class="form-control" name="cover_image" placeholder="http://image.io/7uc54z.jpg">
+    <!-- <label class="form-label mt-3">Cover Image</label>
+    <input type="file" class="form-control" name="cover_image" placeholder="http://image.io/7uc54z.jpg"> -->
 
     <div class="row mt-3">
       <div class="col-6">
@@ -20,30 +22,8 @@
         <input type="number" class="form-control" name="price" placeholder="1000000">
       </div>
       <div class="col-6">
-        <label class="form-label">Rating</label>
-        <input type="number" class="form-control" name="rating" placeholder="5">
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-6">
-        <label class="form-label">Max Guest</label>
-        <input type="number" class="form-control" name="max_guest" placeholder="10">
-      </div>
-      <div class="col-6">
-        <label class="form-label">Min Age</label>
-        <input type="number" class="form-control" name="min_age" placeholder="17">
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-6">
-        <label class="form-label">Start Date</label>
-        <input type="date" class="form-control" name="start_date">
-      </div>
-      <div class="col-6">
-        <label class="form-label">End Date</label>
-        <input type="date" class="form-control" name="end_date">
+        <label class="form-label">Minimum Guest</label>
+        <input type="number" class="form-control" name="min_guest" placeholder="5">
       </div>
     </div>
 
@@ -52,14 +32,22 @@
 
     <label class="form-label mt-3">Type</label>
     <select name="type" class="form-select">
-      <option value="0">Tour</option>
+      <!-- <option value="0">Tour</option> -->
       <option value="1">Akomodasi</option>
       <option value="2">Event Organizer</option>
       <option value="3">Transportasi</option>
+      <option value="4">Tour Domestik</option>
+      <option value="5">Tour Internasional</option>
     </select>
     
     <label class="form-label mt-3">Description</label>
-    <textarea name="description" class="form-control" id="summernote"></textarea>
+    <textarea name="description" class="form-control"></textarea>
+    
+    <label class="form-label mt-3">Itinerary</label>
+    <textarea name="itinerary" class="form-control"></textarea>
+    
+    <label class="form-label mt-3">Term and Condition</label>
+    <textarea name="term_condition" class="form-control"></textarea>
     <!-- <input type="text" class="form-control" name="description" placeholder="Ketik deskripsi produk disini"> -->
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>

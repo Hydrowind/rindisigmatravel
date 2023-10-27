@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Post;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -13,17 +14,17 @@ class PageController extends Controller
     }
 
     public function product(Request $request){
-        $filter = $request->filter;
         $products = Product::all();
-        
-        if($filter){
-            switch($filter)
+        if(isset($request->filter)){
+            switch($request->filter)
             {
-                case 'tour'         : $products = $products->where('type', Product::TYPE_TOUR); break;
-                case 'akomodasi'    : $products = $products->where('type', Product::TYPE_ACCOMMODATION); break;
-                case 'event'        : $products = $products->where('type', Product::TYPE_EVENT_ORGANIZER); break;
-                case 'transportasi' : $products = $products->where('type', Product::TYPE_TRANSPORTATION); break;
-                default             : break;
+                case Product::TYPE_TOUR                 : $products = $products->whereIn('type', [Product::TYPE_TOUR_DOMESTIC, Product::TYPE_TOUR_INTERNATIONAL]); break;
+                case Product::TYPE_ACCOMMODATION        : $products = $products->where('type', Product::TYPE_ACCOMMODATION); break;
+                case Product::TYPE_EVENT                : $products = $products->where('type', Product::TYPE_EVENT); break;
+                case Product::TYPE_TRANSPORTATION       : $products = $products->where('type', Product::TYPE_TRANSPORTATION); break;
+                case Product::TYPE_TOUR_DOMESTIC        : $products = $products->where('type', Product::TYPE_TOUR_DOMESTIC); break;
+                case Product::TYPE_TOUR_INTERNATIONAL   : $products = $products->where('type', Product::TYPE_TOUR_INTERNATIONAL); break;
+                default             : $products = []; break;
             }
         }
         return view('product', ['products' => $products]);
@@ -36,7 +37,7 @@ class PageController extends Controller
     }
 
     public function about(){
-        return view('about');
+        return view('about', ["users" => User::all()]);
     }
 
     public function detail_product(Request $request, string $id){

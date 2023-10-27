@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="h3 mb-3"><strong>Insert</strong> New User</h1>
 
-<form class="card" action="{{ route('user.store') }}" method="post">
+<form class="card" action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
   @csrf
   <!-- <div class="card-header">
     <h5 class="card-title mb-0">Add New Product</h5>
@@ -16,6 +16,9 @@
     
     <label class="form-label mt-3">Password</label>
     <input type="password" class="form-control" name="password">
+
+    <label class="form-label mt-3">Image</label>
+    <input type="file" class="form-control" name="image">
 
     <input type="hidden" name="role" value="1">
 

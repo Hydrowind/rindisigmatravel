@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar js-sidebar">
   <div class="sidebar-content js-simplebar">
-    <a class="sidebar-brand" href="index.html">
+    <a class="sidebar-brand" href="#">
       <span class="align-middle">AdminKit</span>
     </a>
 
@@ -39,19 +39,14 @@
         </a>
       </li>
       
-      <!-- <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ route('region.index') }}">
-          <i class="align-middle" data-feather="flag"></i> <span class="align-middle">Region</span>
-        </a>
-      </li> -->
 
       <li class="sidebar-header">
         Settings
       </li>
 
       <li class="sidebar-item">
-        <a class="sidebar-link" href="{{ '#' }}">
-          <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+        <a class="sidebar-link" href="{{ route('admin.config') }}">
+          <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Configuration</span>
         </a>
       </li>
 

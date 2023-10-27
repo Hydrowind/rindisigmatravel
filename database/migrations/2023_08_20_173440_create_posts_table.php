@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('cover_image');
             $table->text('content');
-            $table->integer('rating')->nullable();
             $table->timestamps();
         });
     }

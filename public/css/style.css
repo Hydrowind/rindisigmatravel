@@ -407,12 +407,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       position: relative;
       color: #000000; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #1A374D; }
+        color: #1A374D;
+        }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #1A374D; }
+        /* color: #1A374D; } */
+        color: blue; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -449,7 +451,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       width: 100%; }
       .site-mobile-menu .site-nav-wrap > li > a {
         padding-left: 20px;
-        font-size: 14px; }
+        font-size: 14px;
+        }
       .site-mobile-menu .site-nav-wrap > li > ul {
         padding: 0;
         margin: 0;

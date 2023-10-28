@@ -21,7 +21,7 @@
     <div class="row">
 
     @foreach($posts as $post)
-    <a href="{{ route('detail.blog', $post->id) }}" class="col-3">
+    <a href="{{ route('detail.blog', $post->id) }}" class="mt-3 col-12 col-md-3">
       <div class="media-1">
         <img src="{{ $post->images->isNotEmpty() ? $post->images->first()->destination : '/uploads/no_image.jpg' }}" alt="Image" class="w-100 img-fluid" style="height: 200px;">
         <div class="d-flex">

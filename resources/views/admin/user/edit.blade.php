@@ -17,6 +17,9 @@
     <label class="form-label mt-3">Email</label>
     <input type="email" class="form-control" name="email" placeholder="robert.jr@gmail.com" value="{{ $data->email }}">
 
+    <label class="form-label mt-3">Image</label>
+    <input type="file" class="form-control" name="image">
+    
     <input type="hidden" name="role" value="1">
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>

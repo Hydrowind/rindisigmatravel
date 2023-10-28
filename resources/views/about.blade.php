@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col-lg-1"></div> <!-- Gap -->
 
-        <div class="col-lg-2 mb-4">
+        <!-- <div class="col-lg-2 mb-4">
           <div class="team">
             <img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
             <div class="px-3">
@@ -111,20 +111,22 @@
               <p>Marketing</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
         
 
         @foreach($users as $user)
+          @if($user->images->isNotEmpty())
           <div class="col-lg-2 mb-4">
             <div class="team">
-              <img src="{{ $user->images() }}" alt="{{ $user->images()->alt_text }}" class="img-fluid mb-4 rounded-20">
+              <img src="{{ $user->images->first()->destination }}" alt="{{ $user->images->first()->alt_text }}" class="img-fluid mb-4 rounded-20">
               <div class="px-3">
-                <h3 class="mb-0">{{ $user->fullname }}</h3>
-                <p>{{ $user->role }}</p>
+                <h3 class="mb-0">{{ $user->name }}</h3>
+                <p>{{-- $user->role --}}</p>
               </div>
             </div>
           </div>
+          @endif
         @endforeach
 
       </div>

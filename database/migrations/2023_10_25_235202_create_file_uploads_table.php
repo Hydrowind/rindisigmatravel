@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('aux');
             $table->string('uploader_id');
             $table->unsignedBigInteger('object_id');
-            $table->string('object_model')->comment('Model Namespace, i.e. App\Models\User');
+            $table->string('object_type')->comment('Model Namespace, i.e. App\Models\User');
             $table->timestamps();
         });
     }

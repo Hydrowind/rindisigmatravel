@@ -33,11 +33,11 @@
     <label class="form-label mt-3">Type</label>
     <select name="type" class="form-select">
       <!-- <option value="0">Tour</option> -->
-      <option value="1">Akomodasi</option>
-      <option value="2">Event Organizer</option>
-      <option value="3">Transportasi</option>
-      <option value="4">Tour Domestik</option>
-      <option value="5">Tour Internasional</option>
+      <option value="{{ Product::TYPE_ACCOMMODATION }}">Akomodasi</option>
+      <option value="{{ Product::TYPE_EVENT }}">Event Organizer</option>
+      <option value="{{ Product::TYPE_TRANSPORTATION }}">Transportasi</option>
+      <option value="{{ Product::TYPE_TOUR_DOMESTIC }}">Tour Domestik</option>
+      <option value="{{ Product::TYPE_TOUR_INTERNATIONAL }}">Tour Internasional</option>
     </select>
     
     <label class="form-label mt-3">Description</label>

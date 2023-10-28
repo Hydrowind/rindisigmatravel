@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\FileUpload;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -31,19 +32,32 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the incoming data
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users', // Ensure email uniqueness
+            'password' => 'required',
+            'role' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate and restrict image uploads
+        ]);
+
         $data = new User();
 
-        $data->name = $request->get('name');
-        $data->email = $request->get('email');
-        $data->password = Hash::make($request->get('password'));
-        $data->role = $request->get('role');
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->password = Hash::make($request->input('password'));
+        $data->role = $request->input('role');
 
-        $data->save();
+       // Save the user data to the database
+        if (!$data->save()) {
+            return back()->withInput()->withErrors(['message' => 'User creation failed.']);
+        }
 
         if($request->hasFile('image')){
             $file = $request->file('image');
-            $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
+            $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
             
+            // Create and save the image record
             $data->images()->create([
                 'originalname' => $file->getClientOriginalName(),
                 'mimetype' => $file->getMimeType(),
@@ -56,15 +70,11 @@ class UserController extends Controller
                 'object_id' => $data->id
             ]);
 
+            // Move the uploaded image to the desired location
             $file->move('uploads', $filename);
         }
 
-        if($data->save()){
-            return redirect()->route('user.index');
-        } else {
-            return back()->withInput(Input::all());
-        }
-
+        return redirect()->route('user.index')->with('success', 'User created successfully.');
     }
 
     /**
@@ -92,8 +102,29 @@ class UserController extends Controller
 
         $data->name = $request->get('name');
         $data->email = $request->get('email');
-        $data->password = $request->get('password');
         $data->role = $request->get('role');
+
+
+        if($request->file('image')){
+            $file = $request->file('image');
+            // $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
+            
+            // Create and save the image record
+            $data->images->first()->update([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                // 'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                // 'uploader_id' => $data->id,
+                // 'object_id' => $data->id
+            ]);
+
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $data->images->first()->destination);
+        }
 
         if($data->save()){
             return redirect()->route('user.index');

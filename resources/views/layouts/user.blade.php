@@ -37,6 +37,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
 	<title>{{ env('APP_NAME', 'Rindi Sigma') }}</title>
+
+	@yield('headscript')
 </head>
 
 <body>
@@ -122,7 +124,7 @@
 	<!-- Summernote JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
-	@yield('script')
+	@yield('bodyscript')
 </body>
 
 </html>

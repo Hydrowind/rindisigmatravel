@@ -40,6 +40,7 @@ Route::controller(AuthController::class)->group(function() {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
   Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
   Route::get('config', [ConfigurationController::class, 'index'])->name('admin.config');
+  Route::put('config', [ConfigurationController::class, 'update'])->name('config.update');
   Route::get('report', [ReportController::class, 'index'])->middleware('superadmin')->name('report');
   Route::get('export', [ReportController::class, 'exportPDF'])->middleware('superadmin')->name('export');
   Route::resources([

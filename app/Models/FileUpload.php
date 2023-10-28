@@ -9,8 +9,15 @@ class FileUpload extends Model
 {
     use HasFactory;
 
+    protected $morphMap = [
+        'user' => 'App\Models\User',
+        'post' => 'App\Models\Post',
+        // Add other morphable models if needed
+    ];
+
     protected $fillable = [
         'originalname',
+        'alt_text,',
         'mimetype',
         'encoding',
         'path',

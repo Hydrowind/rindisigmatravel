@@ -14,7 +14,7 @@
     <div class="row mt-3">
       <div class="col-6">
         <label class="form-label">Cover Image</label>
-        <input type="text" class="form-control" name="cover_image" placeholder="Enter cover image here">
+        <input type="file" class="form-control" name="image">
       </div>
       <!-- <div class="col-6">
         <label class="form-label">Alt Text</label>

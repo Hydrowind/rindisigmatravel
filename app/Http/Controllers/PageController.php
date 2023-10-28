@@ -24,7 +24,7 @@ class PageController extends Controller
                 case Product::TYPE_TRANSPORTATION       : $products = $products->where('type', Product::TYPE_TRANSPORTATION); break;
                 case Product::TYPE_TOUR_DOMESTIC        : $products = $products->where('type', Product::TYPE_TOUR_DOMESTIC); break;
                 case Product::TYPE_TOUR_INTERNATIONAL   : $products = $products->where('type', Product::TYPE_TOUR_INTERNATIONAL); break;
-                default             : $products = []; break;
+                default: $products = []; break;
             }
         }
         return view('product', ['products' => $products]);

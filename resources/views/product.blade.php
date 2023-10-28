@@ -105,7 +105,9 @@
     @foreach($products as $product)
     <div class="col-12 col-md-6 col-lg-3 mt-4">
       <div class="media-1">
-        <a href="{{ route('detail.product', $product->id) }}" class="d-block mb-3"><img src="{{ $product->cover_image }}" alt="Image" class="w-100 img-fluid"></a>
+        <a href="{{ route('detail.product', $product->id) }}" class="d-block mb-3">
+          <img src="{{ $product->images->isNotEmpty() ? $product->images->first()->destination : '/uploads/no_image.jpg' }}" alt="Image" class="w-100 img-fluid">
+        </a>
         <div class="d-flex">
           <div class="p-3">
             <h3><a href="{{ route('detail.product', $product->id) }}">{{ $product->name }}</a></h3>

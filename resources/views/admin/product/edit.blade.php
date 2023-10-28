@@ -4,7 +4,7 @@
 @php use App\Models\Product; @endphp
 <h1 class="h3 mb-3"><strong>Edit</strong> Product</h1>
 
-<form class="card" action="{{ route('product.update', $data->id) }}" method="post">
+<form class="card" action="{{ route('product.update', $data->id) }}" method="post" enctype="multipart/form-data">
   @csrf
   @method('put')
   <!-- <div class="card-header">
@@ -16,12 +16,14 @@
     <label class="form-label mt-3">Product Name</label>
     <input type="text" class="form-control" name="name" placeholder="Wisata Bali 3D1N" value="{{ $data->name }}">
 
-    @if( $data->cover_image )
-    <img src="{{ $data->cover_image }}" alt="Cover Image" width="200px;" class="d-block mt-3">
+    @if( $data->images->isNotEmpty() )
+      @foreach($data->images as $img)
+        <img src="{{ $img->destination }}" alt="Cover Image" width="100px;" class="d-block mt-3">
+      @endforeach
     @endif
 
-    <label class="form-label mt-3">Cover Image</label>
-    <input type="file" class="form-control" name="cover_image">
+    <label class="form-label mt-3">Image</label>
+    <input type="file" class="form-control" name="image">
 
     <div class="row mt-3">
       <div class="col-6">
@@ -39,7 +41,6 @@
 
     <label class="form-label mt-3">Type</label>
     <select name="type" class="form-select">
-      <!-- <option @if($data->type == 0) selected @endif value="0">Tour</option> -->
       <option @if($data->type == Product::TYPE_ACCOMMODATION) selected @endif value={{ Product::TYPE_ACCOMMODATION }}>Akomodasi</option>
       <option @if($data->type == Product::TYPE_EVENT) selected @endif value={{ Product::TYPE_EVENT }}>Event</option>
       <option @if($data->type == Product::TYPE_TRANSPORTATION) selected @endif value={{ Product::TYPE_TRANSPORTATION }}>Transportasi</option>
@@ -48,7 +49,13 @@
     </select>
     
     <label class="form-label mt-3">Description</label>
-    <input type="text" class="form-control" name="description" placeholder="Ketik deskripsi produk disini"  value="{{ $data->description }}">
+    <textarea name="description" class="form-control">{{ $data->description }}</textarea>
+    
+    <label class="form-label mt-3">Itinerary</label>
+    <textarea name="itinerary" class="form-control">{{ $data->itinerary }}</textarea>
+    
+    <label class="form-label mt-3">Term and Condition</label>
+    <textarea name="term_condition" class="form-control">{{ $data->term_condition }}</textarea>
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>
   </div>

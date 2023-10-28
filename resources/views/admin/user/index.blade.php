@@ -16,6 +16,7 @@
       <tr>
         <th>Name</th>
         <th>Email</th>
+        <th>Position</th>
         <th>Role</th>
         <th class="d-none d-md-table-cell">Action</th>
       </tr>
@@ -25,6 +26,7 @@
       <tr>
         <td>{{ $d->name }}</td>
         <td>{{ $d->email }}</td>
+        <td>{{ $d->position }}</td>
         <td>
           @switch($d->role)
             @case(User::ROLE_SUPERADMIN) Superadmin @break

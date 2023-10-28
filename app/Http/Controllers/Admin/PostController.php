@@ -34,7 +34,6 @@ class PostController extends Controller
         $data->title = $request->get('title');
         $data->cover_image = $request->get('cover_image');
         $data->content = $request->get('content');
-        $data->rating = $request->get('rating');
         
 
         if($data->save()){
@@ -71,7 +70,6 @@ class PostController extends Controller
         $data->title = $request->get('title');
         $data->cover_image = $request->get('cover_image');
         $data->content = $request->get('content');
-        $data->rating = $request->get('rating');
 
         if($data->save()){
             return redirect()->route('post.index');

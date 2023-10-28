@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+use Illuminate\Support\Facades\Auth;
+
 class ProductController extends Controller
 {
     /**
@@ -39,20 +41,34 @@ class ProductController extends Controller
         $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
         $data->type = $request->get('type');
-        // $data->region = $request->get('region');
-
-        // if($request->hasFile('cover_image')){
-        //     $file = $request->file('cover_image');
-        //     $filename = date("YmdHis") . '.' . $file->getClientOriginalExtension();
-        //     $file->move('uploads', $filename);
-        //     $data->cover_image = '/uploads/' . $filename;
-        // }
-
-        if($data->save()){
-            return redirect()->route('product.index');
-        } else {
-            return back()->withInput(Input::all());
+        
+        // Save the product data to the database
+        if (!$data->save()) {
+            return back()->withInput()->withErrors(['message' => 'Product creation failed.']);
         }
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
+            
+            // Create and save the image record
+            $data->images()->create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => Auth::user()->id,
+                'object_id' => $data->id
+            ]);
+
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
+
+        return redirect()->route('product.index')->with('success', 'User created successfully.');
 
     }
 
@@ -87,6 +103,38 @@ class ProductController extends Controller
         $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
         $data->type = $request->get('type');
+
+        if ($request->hasFile('image')) {
+            // Validate and save the new image
+            $file = $request->file('image');
+            
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+            ]);
+    
+            // Delete the old image file
+            if ($data->images->isNotEmpty()) {
+                $oldImage = $data->images->first();
+                Storage::delete($oldImage->destination);
+                $oldImage->delete(); // Delete the old image record
+            }
+    
+            // Save the new image record
+            $filename = date("YmdHis") . rand(0, 99) . '.' . $file->getClientOriginalExtension();
+            $data->images()->create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'object_id' => $data->id,
+            ]);
+    
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
 
         if($data->save()){
             return redirect()->route('product.index');

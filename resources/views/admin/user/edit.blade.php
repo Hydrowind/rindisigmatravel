@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="h3 mb-3"><strong>Edit</strong> User</h1>
 
-<form class="card" action="{{ route('user.update', $data->id) }}" method="post">
+<form class="card" action="{{ route('user.update', $data->id) }}" method="post" enctype="multipart/form-data">
   @csrf
   @method('put')
   <!-- <div class="card-header">
@@ -17,10 +17,15 @@
     <label class="form-label mt-3">Email</label>
     <input type="email" class="form-control" name="email" placeholder="robert.jr@gmail.com" value="{{ $data->email }}">
 
+    <label class="form-label mt-3">Position</label>
+    <input type="text" class="form-control" name="position" placeholder="Marketting" value="{{ $data->position }}">
+
     <label class="form-label mt-3">Image</label>
     <input type="file" class="form-control" name="image">
     
-    <input type="hidden" name="role" value="1">
+    <!-- @if($data->images->isNotEmpty())
+    <img class="d-block" src="{{ $data->images->first()->destination }}" width="150px" heigh="150px"/>
+    @endif -->
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>
   </div>

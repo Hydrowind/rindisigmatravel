@@ -10,12 +10,15 @@
   <div class="card-body">
     <label class="form-label mt-3">Fullname</label>
     <input type="text" class="form-control" name="name" placeholder="Robert Downey Jr.">
-
+    
     <label class="form-label mt-3">Email</label>
     <input type="email" class="form-control" name="email" placeholder="robert.jr@gmail.com">
     
     <label class="form-label mt-3">Password</label>
     <input type="password" class="form-control" name="password">
+
+    <label class="form-label mt-3">Position</label>
+    <input type="text" class="form-control" name="position" placeholder="Marketting">
 
     <label class="form-label mt-3">Image</label>
     <input type="file" class="form-control" name="image">

@@ -12,6 +12,7 @@ class FileUpload extends Model
     protected $morphMap = [
         'user' => 'App\Models\User',
         'post' => 'App\Models\Post',
+        'product' => 'App\Models\Product',
         // Add other morphable models if needed
     ];
 

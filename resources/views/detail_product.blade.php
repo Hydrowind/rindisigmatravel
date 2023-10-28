@@ -35,7 +35,7 @@
               <b>Indonesia</b>
             </div>
           </div>
-          <img src="{{ $data->cover_image }}" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
+          <img src="{{ $data->images->first() ? $data->images->first()->destination : '/uploads/no_image.jpg'}}" alt="Cover Image" class="img-fluid rounded-20">
           
           <!-- <h2 class="mt-3">Dunia Fantasi (DUFAN) 1 Day Trip</h2> -->
           <br></br>

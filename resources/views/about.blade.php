@@ -62,59 +62,7 @@
 
       <div class="row">
         <div class="col-lg-1"></div> <!-- Gap -->
-
-        <!-- <div class="col-lg-2 mb-4">
-          <div class="team">
-            <img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">Rina Marlina</h3>
-              <p>Co-Founder &amp; CEO</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 mb-4">
-          <div class="team">
-            <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">M Arghi Herlansyah</h3>
-              <p>Direktur Operasional</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 mb-4">
-          <div class="team">
-            <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">Nurfajrina Fitriani</h3>
-              <p>Digital Marketing</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 mb-4">
-          <div class="team">
-            <img src="images/person_5.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">Syapira Agnia</h3>
-              <p>Marketing</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 mb-4">
-          <div class="team">
-            <img src="images/person_6.jpg" alt="Image" class="img-fluid mb-4 rounded-20">
-            <div class="px-3">
-              <h3 class="mb-0">Nabiel Alghifari</h3>
-              <p>Marketing</p>
-            </div>
-          </div>
-        </div> -->
-
         
-
         @foreach($users as $user)
           @if($user->images->isNotEmpty())
           <div class="col-lg-2 mb-4">
@@ -122,7 +70,7 @@
               <img src="{{ $user->images->first()->destination }}" alt="{{ $user->images->first()->alt_text }}" class="img-fluid mb-4 rounded-20">
               <div class="px-3">
                 <h3 class="mb-0">{{ $user->name }}</h3>
-                <p>{{-- $user->role --}}</p>
+                <p>{{ $user->position }}</p>
               </div>
             </div>
           </div>

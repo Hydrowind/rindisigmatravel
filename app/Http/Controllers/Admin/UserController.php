@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\FileUpload;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
 
 class UserController extends Controller
 {
@@ -38,7 +40,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users', // Ensure email uniqueness
             'password' => 'required',
             'role' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate and restrict image uploads
+            'image' => 'image|mimes:jpeg,png,jpg,gif', // Validate and restrict image uploads
         ]);
 
         $data = new User();
@@ -46,6 +48,7 @@ class UserController extends Controller
         $data->name = $request->input('name');
         $data->email = $request->input('email');
         $data->password = Hash::make($request->input('password'));
+        $data->position = $request->input('position');
         $data->role = $request->input('role');
 
        // Save the user data to the database
@@ -100,30 +103,43 @@ class UserController extends Controller
     {
         $data = User::find($id);
 
-        $data->name = $request->get('name');
-        $data->email = $request->get('email');
-        $data->role = $request->get('role');
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->position = $request->input('position');
 
 
-        if($request->file('image')){
+        if ($request->hasFile('image')) {
+
+            // Validate and save the new image
             $file = $request->file('image');
-            // $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
             
-            // Create and save the image record
-            $data->images->first()->update([
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+            ]);
+    
+            // Delete the old image file
+            if ($data->images->isNotEmpty()) {
+                $oldImage = $data->images->first();
+                Storage::delete($oldImage->destination);
+                $oldImage->delete(); // Delete the old image record
+            }
+    
+            // Save the new image record
+            $filename = date("YmdHis") . rand(0, 99) . '.' . $file->getClientOriginalExtension();
+            $data->images()->create([
                 'originalname' => $file->getClientOriginalName(),
                 'mimetype' => $file->getMimeType(),
                 'encoding' => null,
                 'path' => '/uploads',
-                // 'destination' => '/uploads/' . $filename,
+                'destination' => '/uploads/' . $filename,
                 'size' => $file->getSize(),
                 'aux' => null,
-                // 'uploader_id' => $data->id,
-                // 'object_id' => $data->id
+                'uploader_id' => $data->id,
+                'object_id' => $data->id,
             ]);
-
+    
             // Move the uploaded image to the desired location
-            $file->move('uploads', $data->images->first()->destination);
+            $file->move('uploads', $filename);
         }
 
         if($data->save()){

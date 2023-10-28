@@ -124,12 +124,12 @@
           <a href="{{ route('detail.product', $i->id) }}" class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-5">
-                  <img src="{{ $i->cover_image }}" class="img-fluid rounded-start" style="height: 100%;" alt="tour">
+                  <img src="{{ $i->images->isNotEmpty() ? $i->images->first()->destination : '/uploads/no_image.jpg' }}" class="img-fluid rounded-start" style="height: 100%;" alt="tour">
               </div>
               <div class="col-md-7">
                 <div class="card-body px-0">
-                  <p class="card-text">{{ $i->name }}</p>
-                  <p class="card-text"><small class="text-muted">{{ substr($i->description, 0, 50) }}...</small></p>
+                  <p class="card-text ml-3">{{ $i->name }}</p>
+                  <!-- <p class="card-text"><small class="text-muted">@php echo substr($i->description, 0, 50) @endphp ...</small></p> -->
                 </div>
               </div>
             </div>

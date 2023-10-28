@@ -48,7 +48,7 @@ class PageController extends Controller
 
     public function detail_product(Request $request, string $id){
         $data = Product::find($id);
-        $interest = Product::where('type', Product::TYPE_TOUR)->inRandomOrder()->take(3)->get();
+        $interest = Product::whereIn('type', [Product::TYPE_TOUR_DOMESTIC, Product::TYPE_TOUR_INTERNATIONAL])->inRandomOrder()->take(3)->get();
 
         return view('detail_product', [
             'data' => $data, 

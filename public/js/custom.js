@@ -165,7 +165,7 @@ $(function(){
 		if ( $('.owl-5-slider').length > 0 ) {
 			var owl5 = $('.owl-5-slider').owlCarousel({
 				loop: false,
-				autoHeight: true,
+				autoHeight: false,
 				margin: 10,
 				autoplay: true,
 				smartSpeed: 700,
@@ -175,7 +175,7 @@ $(function(){
 				navText: ['<span class="icon-keyboard_arrow_left"></span>','<span class="icon-keyboard_arrow_right"></span>'],
 				responsive:{
 					0:{
-						items:1
+						items:2
 					},
 					600:{
 						items:2

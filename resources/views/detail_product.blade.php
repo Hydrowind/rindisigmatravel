@@ -35,8 +35,15 @@
               <b>Indonesia</b>
             </div>
           </div>
-          <img src="{{ $data->images->first() ? $data->images->first()->destination : '/uploads/no_image.jpg'}}" alt="Cover Image" class="img-fluid rounded-20">
+          <!-- <img src="{{ $data->images->first() ? $data->images->first()->destination : '/uploads/no_image.jpg'}}" alt="Cover Image" class="img-fluid rounded-20"> -->
           
+          <!-- <div class="col-lg-7 mt-3"> -->
+          <div class="owl-single dots-absolute owl-carousel">
+            @foreach($data->images as $image)
+              <img src="{{ $image->destination }}" alt="{{ $image->alt_text }}" class="img-fluid rounded-20">
+            @endforeach
+          </div>
+          <!-- </div> -->
           <!-- <h2 class="mt-3">Dunia Fantasi (DUFAN) 1 Day Trip</h2> -->
           <br></br>
 
@@ -52,9 +59,9 @@
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{{ $data->description }}</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{{ $data->itinerary }}</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{{ $data->term_condition }}</div>
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">@php echo $data->description; @endphp</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">@php echo $data->itinerary; @endphp</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">@php echo $data->term_condition; @endphp</div>
           </div>
           
 
@@ -107,7 +114,7 @@
         <div class="col-lg-5 pl-lg-5 ml-auto">
           <div class="widget-sidebar">
             <h2 class="section-title mb-4">Hubungi Kami</h2>
-            <p><a href="https://wa.me/+6282158751381?text=Halo Admin Rindi, Saya mau pesan 4 DAY LABUAN BAJO" target="_blank" class="btn btn-primary">Pesan Sekarang</a></p>
+            <p><a href="{{ 'https://wa.me/' . $whatsapp . '?text=Halo Admin Rindi, Saya mau pesan ' . $data->name }}" target="_blank" class="btn btn-primary">Pesan Sekarang</a></p>
           </div>
 
           <div.widget-sideba>

@@ -39,8 +39,7 @@ Route::controller(AuthController::class)->group(function() {
 // Admin Route
 Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
   Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-  Route::get('config', [ConfigurationController::class, 'index'])->name('admin.config');
-  Route::put('config', [ConfigurationController::class, 'update'])->name('config.update');
+  
   Route::get('report', [ReportController::class, 'index'])->middleware('superadmin')->name('report');
   Route::get('export', [ReportController::class, 'exportPDF'])->middleware('superadmin')->name('export');
   Route::resources([
@@ -48,5 +47,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
       'product'   => ProductController::class,
       'post'      => PostController::class,
   ]);
+
   Route::resource('users', UserController::class)->middleware('superadmin');
+
+  Route::group(['prefix' => 'config'], function(){
+    Route::get('/', [ConfigurationController::class, 'index'])->name('admin.config');
+    Route::put('/', [ConfigurationController::class, 'update'])->name('config.update');
+    Route::get('/homepage', [ConfigurationController::class, 'homepage'])->name('admin.config.homepage');
+    Route::put('/homepage', [ConfigurationController::class, 'updateHomepage'])->name('admin.config.homepage.update');
+  });
 });

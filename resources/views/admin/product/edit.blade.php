@@ -22,8 +22,17 @@
       @endforeach
     @endif
 
-    <label class="form-label mt-3">Image</label>
-    <input type="file" class="form-control" name="image">
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image</label>
+        <input type="file" class="form-control" name="image">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_text">
+      </div>
+    </div>
+
 
     <div class="row mt-3">
       <div class="col-6">

@@ -21,13 +21,13 @@
     <div class="row">
 
     @foreach($posts as $post)
-    <a href="{{ route('detail.blog', $post->id) }}" class="col-12">
+    <a href="{{ route('detail.blog', $post->id) }}" class="col-3">
       <div class="media-1">
-        <img src="{{ $post->cover_image }}" alt="Image" class="w-100 img-fluid" style="height: 500px;">
+        <img src="{{ $post->images->isNotEmpty() ? $post->images->first()->destination : '/uploads/no_image.jpg' }}" alt="Image" class="w-100 img-fluid" style="height: 200px;">
         <div class="d-flex">
-          <div class="p-3">
+          <div class="p-3 " style="width: 100%; word-wrap: break-word;">
             <h3 class="fw-bold">{{ $post->title }}</h3>
-            <p>{{ $post->content }}</p>
+            <p class="text-wrap" style="width: 100%">{{ $post->content }}</p>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -47,25 +48,36 @@ class ProductController extends Controller
             return back()->withInput()->withErrors(['message' => 'Product creation failed.']);
         }
 
-        if($request->hasFile('image')){
-            $file = $request->file('image');
-            $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
+        if($request->hasFile('images')){
+            if($data->images->isNotEmpty()){
+                foreach($data->images as $image){
+                    Storage::delete($image->destination);
+                    $image->delete();
+                }
+            }
             
-            // Create and save the image record
-            $data->images()->create([
-                'originalname' => $file->getClientOriginalName(),
-                'mimetype' => $file->getMimeType(),
-                'encoding' => null,
-                'path' => '/uploads',
-                'destination' => '/uploads/' . $filename,
-                'size' => $file->getSize(),
-                'aux' => null,
-                'uploader_id' => Auth::user()->id,
-                'object_id' => $data->id
-            ]);
+            $files = $request->file('images');
 
-            // Move the uploaded image to the desired location
-            $file->move('uploads', $filename);
+            foreach($files as $i => $file){
+                $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
+                
+                // Create and save the image record
+                $data->images()->create([
+                    'originalname' => $file->getClientOriginalName(),
+                    'alt_text' => $request->input('alt_texts')[$i] ,
+                    'mimetype' => $file->getMimeType(),
+                    'encoding' => null,
+                    'path' => '/uploads',
+                    'destination' => '/uploads/' . $filename,
+                    'size' => $file->getSize(),
+                    'aux' => $i,
+                    'uploader_id' => Auth::user()->id,
+                    'object_id' => $data->id
+                ]);
+
+                // Move the uploaded image to the desired location
+                $file->move('uploads', $filename);
+            }
         }
 
         return redirect()->route('product.index')->with('success', 'User created successfully.');

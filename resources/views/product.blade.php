@@ -112,8 +112,17 @@
           <div class="p-3">
             <h3><a href="{{ route('detail.product', $product->id) }}">{{ $product->name }}</a></h3>
             <div class="d-flex flex-column text-black-50">
-              <p class="m-0"><i class="icon-clock-o"></i>{{ $product->duration }}</p>
-              <p><i class="icon-add_location"></i> Indonesia</p>
+              <p class="m-0"><i class="icon-clock-o"></i>{{ ' ' . $product->duration }}</p>
+              <p>
+                <i class="icon-add_location"></i>
+                @switch($product->type)
+                  @case(Product::TYPE_TOUR_DOMESTIC) Domestik @break
+                  @case(Product::TYPE_TOUR_INTERNATIONAL) Internasional @break
+                  @case(Product::TYPE_ACCOMMODATION) Akomodasi @break
+                  @case(Product::TYPE_EVENT) Event @break
+                  @case(Product::TYPE_TRANSPORTATION) Transportasi @break
+                @endswitch
+              </p>
             </div>
             <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
             <!-- <a href="https://wa.me/+6282158751381" target="_blank" class="btn btn-outline-primary btn-sm">Pesan</a> -->

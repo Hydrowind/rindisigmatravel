@@ -49,6 +49,12 @@
           <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Configuration</span>
         </a>
       </li>
+      
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="{{ route('admin.config.homepage') }}">
+          <i class="align-middle" data-feather="home"></i> <span class="align-middle">Homepage</span>
+        </a>
+      </li>
 
       <!-- <li class="sidebar-header">
         Plugins & Addons

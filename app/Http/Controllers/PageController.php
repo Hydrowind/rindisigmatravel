@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\FileUpload; 
+use App\Models\Configuration; 
+
 
 class PageController extends Controller
 {
     public function home(){
-        return view('home');
+        return view('home',[
+            'partnerlogos'  => FileUpload::where('object_type', FileUpload::TYPE_PARTNER)->get(),
+            'guestdoc'      => FileUpload::where('object_type', FileUpload::TYPE_GUEST_DOCUMENTATION)->get()
+        ]);
     }
 
     public function product(Request $request){
@@ -37,7 +43,7 @@ class PageController extends Controller
     }
 
     public function about(){
-        return view('about', ["users" => User::all()]);
+        return view('about', ["users" => User::where('role', User::ROLE_ADMIN)->get()]);
     }
 
     public function detail_product(Request $request, string $id){
@@ -47,6 +53,7 @@ class PageController extends Controller
         return view('detail_product', [
             'data' => $data, 
             'interest' => $interest,
+            'whatsapp' => Configuration::where('name', Configuration::WHATSAPP)->get()->first()->value
         ]);
     }
 

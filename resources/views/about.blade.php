@@ -60,14 +60,12 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-1"></div> <!-- Gap -->
-        
+      <!-- <div class="row d-flex justify-content-center">        
         @foreach($users as $user)
           @if($user->images->isNotEmpty())
           <div class="col-lg-2 mb-4">
             <div class="team">
-              <img src="{{ $user->images->first()->destination }}" alt="{{ $user->images->first()->alt_text }}" class="img-fluid mb-4 rounded-20">
+              <img src="{{ $user->images ? $user->images->first()->destination : '/uploads/user_default.png' }}" alt="{{ $user->images->first()->alt_text }}" class="img-fluid mb-4 rounded-20">
               <div class="px-3">
                 <h3 class="mb-0">{{ $user->name }}</h3>
                 <p>{{ $user->position }}</p>
@@ -76,7 +74,18 @@
           </div>
           @endif
         @endforeach
+      </div> -->
 
+      <div class="owl-5-slider owl-carousel no-nav d-flex justify-content-center">
+        @foreach($users as $user)
+        <div class="team">
+          <img src="{{ $user->images ? $user->images->first()->destination : '/uploads/user_default.png' }}" alt="{{ $user->images->first()->alt_text }}" class="img-fluid mb-4 rounded-20">
+          <div class="px-3">
+            <h3 class="mb-0">{{ $user->name }}</h3>
+            <p>{{ $user->position }}</p>
+          </div>
+        </div>
+        @endforeach
       </div>
 
     </div>

@@ -15,7 +15,6 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th>Cover Image</th>
         <th>Content</th>
         <th class="d-none d-md-table-cell">Action</th>
       </tr>
@@ -24,7 +23,6 @@
       @foreach($data as $d)
       <tr>
         <td>{{ $d->title }}</td>
-        <td>{{ $d->cover_image }}</td>
         <td>{{ $d->content }}</td>
         <!-- <td>{{ $d->price }}</td> -->
         <td>

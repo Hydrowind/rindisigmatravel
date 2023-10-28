@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+use Illuminate\Support\Facades\Storage;
+
+
 class PostController extends Controller
 {
     /**
@@ -32,15 +35,35 @@ class PostController extends Controller
         $data = new Post();
 
         $data->title = $request->get('title');
-        $data->cover_image = $request->get('cover_image');
         $data->content = $request->get('content');
         
-
-        if($data->save()){
-            return redirect()->route('post.index');
-        } else {
-            return back()->withInput(Input::all());
+        // Save the user data to the database
+        if (!$data->save()) {
+            return back()->withInput()->withErrors(['message' => 'Post creation failed.']);
         }
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = date("YmdHis") . rand(0,99) . '.' . $file->getClientOriginalExtension();
+            
+            // Create and save the image record
+            $data->images()->create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => $data->id,
+                'object_id' => $data->id
+            ]);
+
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
+
+        return redirect()->route('post.index')->with('success', 'Post created successfully.');
 
     }
 
@@ -68,8 +91,41 @@ class PostController extends Controller
         $data = Post::find($id);
 
         $data->title = $request->get('title');
-        $data->cover_image = $request->get('cover_image');
         $data->content = $request->get('content');
+
+        if ($request->hasFile('image')) {
+
+            // Validate and save the new image
+            $file = $request->file('image');
+            
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+            ]);
+    
+            // Delete the old image file
+            if ($data->images->isNotEmpty()) {
+                $oldImage = $data->images->first();
+                Storage::delete($oldImage->destination);
+                $oldImage->delete(); // Delete the old image record
+            }
+    
+            // Save the new image record
+            $filename = date("YmdHis") . rand(0, 99) . '.' . $file->getClientOriginalExtension();
+            $data->images()->create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => $data->id,
+                'object_id' => $data->id,
+            ]);
+    
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
 
         if($data->save()){
             return redirect()->route('post.index');

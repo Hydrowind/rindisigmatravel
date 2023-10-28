@@ -9,6 +9,9 @@ class FileUpload extends Model
 {
     use HasFactory;
 
+    const TYPE_PARTNER = 'PARTNER';
+    const TYPE_GUEST_DOCUMENTATION = 'GUEST_DOCUMENTATION';
+
     protected $morphMap = [
         'user' => 'App\Models\User',
         'post' => 'App\Models\Post',
@@ -27,7 +30,7 @@ class FileUpload extends Model
         'aux',
         'uploader_id',
         'object_id',
-        'object_model',
+        'object_type',
     ];
 
     public function object()

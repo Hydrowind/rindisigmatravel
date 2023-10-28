@@ -102,7 +102,7 @@ $(function(){
 				items: 3,
 				nav: true,
 				dots: true,
-				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
+				navText: ['<span class="icon-keyboard_arrow_left"></span>','<span class="icon-keyboard_arrow_right"></span>'],
 				responsive:{
 					0:{
 						items:1
@@ -132,7 +132,7 @@ $(function(){
 				items: 4,
 				nav: true,
 				dots: true,
-				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
+				navText: ['<span class="icon-keyboard_arrow_left"></span>','<span class="icon-keyboard_arrow_right"></span>'],
 				responsive:{
 					0:{
 						items:1
@@ -164,15 +164,15 @@ $(function(){
 
 		if ( $('.owl-5-slider').length > 0 ) {
 			var owl5 = $('.owl-5-slider').owlCarousel({
-				loop: true,
+				loop: false,
 				autoHeight: true,
 				margin: 10,
-				autoplay: false,
+				autoplay: true,
 				smartSpeed: 700,
 				items: 5,
-				nav: true,
-				dots: true,
-				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
+				nav: false,
+				dots: false,
+				navText: ['<span class="icon-keyboard_arrow_left"></span>','<span class="icon-keyboard_arrow_right"></span>'],
 				responsive:{
 					0:{
 						items:1
@@ -213,7 +213,8 @@ $(function(){
 				autoplay: true,
 				smartSpeed: 800,
 				items: 1,
-				nav: false,
+				nav: true,
+				dots: false,
 				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
 				onInitialized: counter
 			});

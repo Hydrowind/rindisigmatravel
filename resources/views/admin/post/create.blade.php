@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="h3 mb-3"><strong>Insert</strong> New Post</h1>
 
-<form class="card" action="{{ route('post.store') }}" method="post">
+<form class="card" action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
   @csrf
   <!-- <div class="card-header">
     <h5 class="card-title mb-0">Add New Product</h5>

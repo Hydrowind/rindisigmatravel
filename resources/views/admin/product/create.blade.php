@@ -18,6 +18,116 @@
 
     <div class="row mt-3">
       <div class="col-6">
+        <label class="form-label mt-3">Image 1</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 2</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 3</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 4</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 5</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 6</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 7</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 8</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 9</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label class="form-label mt-3">Image 10</label>
+        <input type="file" class="form-control" name="images[]">
+      </div>
+      <div class="col-6">
+        <label class="form-label mt-3">Alt Text</label>
+        <input type="text" class="form-control" name="alt_texts[]">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
         <label class="form-label">Price</label>
         <input type="number" class="form-control" name="price" placeholder="1000000">
       </div>

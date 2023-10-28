@@ -67,43 +67,14 @@
 			<div class="col-lg-12 text-center">
 				<h2 class="section-title text-center mb-5">Mereka Yang Percaya Kami</h2>
 
-				<div class="owl-5-slider owl-carousel no-nav">
+				<div class="owl-5-slider owl-carousel no-nav d-flex justify-content-center">
+					@foreach($partnerlogos as $logo)
 					<div class="testimonial mx-auto">
 						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
+							<img src="{{ $logo->destination }}" alt="Client Logo" class="img-fluid">
 						</figure>
 					</div>
-
-					<div class="testimonial mx-auto">
-						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
-						</figure>
-					</div>
-
-					<div class="testimonial mx-auto">
-						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
-						</figure>
-					</div>
-
-					<div class="testimonial mx-auto">
-						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
-						</figure>
-					</div>
-
-					<div class="testimonial mx-auto">
-						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
-						</figure>
-					</div>
-
-					<div class="testimonial mx-auto">
-						<figure class="img-wrap">
-							<img src="images/logo.png" alt="Image" class="img-fluid">
-						</figure>
-					</div>
-
+					@endforeach
 				</div>
 
 			</div>
@@ -119,36 +90,19 @@
 			<div class="col-lg-7"><h2 class="section-title text-center">Dokumentasi Tamu</h2></div>
 		</div>
 
-		<div class="owl-carousel owl-5-slider">
+		<div class="owl-carousel owl-5-slider d-flex justify-content-center">
+
+			@foreach($guestdoc as $doc)
 			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-1.jpg" data-fancybox="gallery">
-					<div class="media-text">
+				<a class="media-thumb" href="{{ $doc->destination }}" data-fancybox="gallery">
+					<!-- <div class="media-text">
 						<h3>DUNIA FANTASI (DUFAN)</h3>
 						<span class="location">Jakarta</span>
-					</div>
-					<img src="images/hero-slider-1.jpg" alt="Image" class="img-fluid" height="500px">
+					</div> -->
+					<img src="{{ $doc->destination }}" alt="Image" class="img-fluid" height="500px">
 				</a> 
 			</div>
-
-			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-2.jpg" data-fancybox="gallery">
-					<div class="media-text">
-						<h3>BANDUNG</h3>
-						<span class="location">Bandung</span>
-					</div>
-					<img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-				</a> 
-			</div>
-
-			<div class="item">
-				<a class="media-thumb" href="images/hero-slider-3.jpg" data-fancybox="gallery">
-					<div class="media-text">
-						<h3>TURKEY</h3>
-						<span class="location">Turkey</span>
-					</div>
-					<img src="images/hero-slider-3.jpg" alt="Image" class="img-fluid">
-				</a> 
-			</div>
+			@endforeach
 
 		</div>
 

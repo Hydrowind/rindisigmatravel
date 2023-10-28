@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="h3 mb-3"><strong>Edit</strong> Post</h1>
 
-<form class="card" action="{{ route('post.update', $data->id) }}" method="post">
+<form class="card" action="{{ route('post.update', $data->id) }}" method="post" enctype="multipart/form-data">
   @csrf
   @method('put')
   <!-- <div class="card-header">

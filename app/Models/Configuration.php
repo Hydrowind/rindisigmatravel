@@ -17,4 +17,8 @@ class Configuration extends Model
         'name',
         'value',
     ];
+
+    public function getWhatsApp(){
+        return Configuration::where('name', this::WHATSAPP)->value;
+    }
 }

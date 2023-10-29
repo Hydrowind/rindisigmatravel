@@ -43,7 +43,7 @@ class PageController extends Controller
     }
 
     public function about(){
-        return view('about', ["users" => User::where('role', User::ROLE_ADMIN)->get()]);
+        return view('about', ["users" => User::where('role', '!=', User::ROLE_SUPERADMIN)->get()]);
     }
 
     public function detail_product(Request $request, string $id){

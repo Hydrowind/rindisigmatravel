@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index', ['data' => User::all()]);
+        return view('admin.user.index', ['data' => User::where('role', '!=', User::ROLE_SUPERADMIN)->get()]);
     }
 
     /**

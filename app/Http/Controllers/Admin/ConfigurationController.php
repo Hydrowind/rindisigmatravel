@@ -39,7 +39,10 @@ class ConfigurationController extends Controller
     }
 
     public function homepage(){
-        return view('admin.config.homepage');
+        return view('admin.config.homepage', [
+            "partners" => FileUpload::where('object_type', FileUpload::TYPE_PARTNER)->get(),
+            "guestdocs" => FileUpload::where('object_type', FileUpload::TYPE_GUEST_DOCUMENTATION)->get(),
+        ]);
     }
 
     public function updateHomepage(Request $request){
@@ -110,6 +113,48 @@ class ConfigurationController extends Controller
                 // Move the uploaded image to the desired location
                 $file->move('uploads', $filename);
             }
+        }
+
+        return redirect(Request::url());
+    }
+
+    function updateHomepage2(Request $request){
+        if($request->hasFile('partner')){
+            $file = $request->file('partner');
+            $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
+
+            FileUpload::create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => Auth::user()->id,
+                'object_type' => FileUpload::TYPE_PARTNER
+            ]);
+
+            $file->move('uploads', $filename);
+        }
+
+        if($request->hasFile('guest_doc')){
+            $file = $request->file('guest_doc');
+            $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
+
+            FileUpload::create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => Auth::user()->id,
+                'object_type' => FileUpload::TYPE_GUEST_DOCUMENTATION
+            ]);
+
+            $file->move('uploads', $filename);
         }
 
         return back()->withInput();

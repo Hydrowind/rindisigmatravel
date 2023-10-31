@@ -24,7 +24,13 @@
 
 	<!-- Tiny MCE  -->
 	<script src="https://cdn.tiny.cloud/1/295sm5t9w649vpgcoang7vb67sw2smnawtfyedl61cbpxe4l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-	<script>tinymce.init({selector:'textarea'});</script>
+	<script>
+		tinymce.init({
+			selector:'textarea',
+			plugins: 'link',
+			default_link_target: '_blank'
+		});
+	</script>
 
 </head>
 
@@ -272,6 +278,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 	
 	@yield('script')
+	@stack('scripts')
 </body>
 
 </html>

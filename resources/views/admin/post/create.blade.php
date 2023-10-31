@@ -10,20 +10,23 @@
   <div class="card-body">
     <label class="form-label mt-3">Title</label>
     <input type="text" class="form-control" name="title" placeholder="Enter title here">
-
+    
     <div class="row mt-3">
       <div class="col-6">
         <label class="form-label">Cover Image</label>
         <input type="file" class="form-control" name="image">
       </div>
-      <!-- <div class="col-6">
+      <div class="col-6">
         <label class="form-label">Alt Text</label>
         <input type="text" class="form-control" name="alt_text" placeholder="Enter alt image here">
-      </div> -->
+      </div>
     </div>
     
     <label class="form-label mt-3">Content</label>
-    <input type="text" class="form-control" name="content" placeholder="Enter blog content here">
+    <textarea class="form-control" name="content"></textarea>
+    
+    <label class="form-label mt-3">Meta Description</label>
+    <input type="text" class="form-control" name="meta" placeholder="Enter meta here">
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>
   </div>

@@ -36,6 +36,7 @@ class PostController extends Controller
 
         $data->title = $request->get('title');
         $data->content = $request->get('content');
+        $data->meta = $request->get('meta');
         
         // Save the user data to the database
         if (!$data->save()) {
@@ -92,6 +93,7 @@ class PostController extends Controller
 
         $data->title = $request->get('title');
         $data->content = $request->get('content');
+        $data->meta = $request->get('meta');
 
         if ($request->hasFile('image')) {
 

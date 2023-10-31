@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('file_uploads', function (Blueprint $table) {
             $table->id();
             $table->string('originalname');
-            $table->string('alt_text');
-            $table->string('mimetype');
-            $table->string('encoding');
-            $table->string('path');
+            $table->string('alt_text')->nullable();
+            $table->string('mimetype')->nullable();
+            $table->string('encoding')->nullable();
+            $table->string('path')->nullable();
             $table->string('destination');
-            $table->string('size');
-            $table->string('aux');
-            $table->string('uploader_id');
-            $table->unsignedBigInteger('object_id');
-            $table->string('object_type')->comment('Model Namespace, i.e. App\Models\User');
+            $table->string('size')->nullable();
+            $table->string('aux')->nullable();
+            $table->string('uploader_id')->nullable();
+            $table->unsignedBigInteger('object_id')->nullable();
+            $table->string('object_type')->nullable()->comment('Model Namespace, i.e. App\Models\User');
             $table->timestamps();
         });
     }

@@ -42,6 +42,7 @@ class ProductController extends Controller
         $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
         $data->type = $request->get('type');
+        $data->meta = $request->get('meta');
         
         // Save the product data to the database
         if (!$data->save()) {
@@ -115,6 +116,7 @@ class ProductController extends Controller
         $data->min_guest = $request->get('min_guest');
         $data->duration = $request->get('duration');
         $data->type = $request->get('type');
+        $data->meta = $request->get('meta');
 
         if ($request->hasFile('image')) {
             // Validate and save the new image

@@ -191,11 +191,11 @@
 				</p>
 				<!-- Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing. -->
 				
-				<div class="container row list-unstyled two-col clearfix">
-					<li class="col-6">Berpengalaman 20 Tahun</li>
-					<li class="col-6">Harga Bersahabat</li>
-					<li class="col-6">Beragam Destinasi Seluruh Dunia</li>
-				</div>
+				<ul class="container" style="list-style-type: '✔ ';">
+					<li class="mb-3">Berpengalaman 20 Tahun</li>
+					<li class="mb-3">Harga Bersahabat</li>
+					<li class="mb-3">Beragam Destinasi Seluruh Dunia</li>
+				</ul>
 			</div>
 		</div>
 	</div>

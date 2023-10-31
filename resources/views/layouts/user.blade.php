@@ -54,6 +54,8 @@
 	<title>{{ env('APP_NAME', 'Rindi Sigma') }}</title>
 
 	@php echo $headscript; @endphp
+
+	@stack('meta')
 </head>
 
 <body>

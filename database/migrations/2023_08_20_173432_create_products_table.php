@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('min_guest')->nullable();
             $table->string('duration')->nullable();
             $table->string('type')->nullable()->comment('TOUR_DOMESTIC, TOUR_INTERNATIONAL, ACCOMODATION, EVENT, TRANSPORTATION');
+            $table->text('meta')->nullable();
 
             $table->timestamps();
         });

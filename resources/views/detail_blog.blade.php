@@ -34,7 +34,7 @@
           <a href="{{ route('detail.blog', $i->id) }}" class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-5">
-                  <img src="{{ $i->cover_image }}" class="img-fluid rounded-start" style="height: 100%;" alt="tour">
+                  <img src="{{ $i->images->isNotEmpty() ? $i->images->first()->destination : '/uploads/no_image.jpg' }}" class="img-fluid rounded-start" style="height: 100%;" alt="tour">
               </div>
               <div class="col-md-7">
                 <div class="card-body px-0">
@@ -51,3 +51,7 @@
     </div>
   </div>
 @endsection
+
+@push('meta')
+@php echo $data->meta; @endphp
+@endpush

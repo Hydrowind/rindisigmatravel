@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PostController;
-use App\Http\Controllers\Admin\RegionController;
+use App\Http\Controllers\Admin\FileUploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,13 +39,12 @@ Route::controller(AuthController::class)->group(function() {
 // Admin Route
 Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
   Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-  
-  Route::get('report', [ReportController::class, 'index'])->middleware('superadmin')->name('report');
-  Route::get('export', [ReportController::class, 'exportPDF'])->middleware('superadmin')->name('export');
+
   Route::resources([
       'user'      => UserController::class,
       'product'   => ProductController::class,
       'post'      => PostController::class,
+      'fileupload'=> FileUploadController::class,
   ]);
 
   Route::resource('users', UserController::class)->middleware('superadmin');
@@ -54,6 +53,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
     Route::get('/', [ConfigurationController::class, 'index'])->name('admin.config');
     Route::put('/', [ConfigurationController::class, 'update'])->name('config.update');
     Route::get('/homepage', [ConfigurationController::class, 'homepage'])->name('admin.config.homepage');
-    Route::put('/homepage', [ConfigurationController::class, 'updateHomepage'])->name('admin.config.homepage.update');
+    Route::put('/homepage', [ConfigurationController::class, 'updateHomepage2'])->name('admin.config.homepage.update');
   });
 });

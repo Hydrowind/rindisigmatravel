@@ -158,7 +158,9 @@
     
     <label class="form-label mt-3">Term and Condition</label>
     <textarea name="term_condition" class="form-control"></textarea>
-    <!-- <input type="text" class="form-control" name="description" placeholder="Ketik deskripsi produk disini"> -->
+
+    <label class="form-label mt-3">Meta Description</label>
+    <input type="text" class="form-control" name="meta" placeholder="Enter meta here">
 
     <button type="submit" class="btn btn-primary mt-3">Save</button>
   </div>

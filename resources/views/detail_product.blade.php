@@ -153,3 +153,7 @@
     </div>
   </div> -->
 @endsection
+
+@push('meta')
+@php echo $data->meta; @endphp
+@endpush

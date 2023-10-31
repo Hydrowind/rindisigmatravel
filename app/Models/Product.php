@@ -29,6 +29,7 @@ class Product extends Model
         'min_guest',
         'duration',
         'type',
+        'meta',
     ];
 
     public function images()

@@ -40,6 +40,7 @@
     
     <input type="hidden" name="object_id" value="{{ $data->id }}">
     <input type="hidden" name="object_type" value="{{ 'App\Models\Product' }}">
+    <input type="hidden" name="current_url" value="{{ url()->current() }}">
   
     <button type="submit" class="btn btn-primary mt-3">Insert</button>
   </div>

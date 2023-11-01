@@ -53,9 +53,14 @@ class FileUploadController extends Controller
             'object_type' => $request->input('object_type'),
         ]);
 
+
         $file->move('uploads', $filename);
 
-        return back()->withInput();
+        if(isset($request->current_url)){
+            return redirect($request->current_url);
+        } else {
+            return back();
+        }
         
     }
 

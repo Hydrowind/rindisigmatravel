@@ -70,6 +70,7 @@
     <input type="file" class="form-control" name="guest_doc[]"> -->
     <input type="file" class="form-control" name="guest_doc">
 
+    <input type="hidden" name="current_url" value="{{ url()->current() }}">
     <button type="submit" class="btn btn-primary mt-3">Insert</button>
 
   </div>

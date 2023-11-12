@@ -33,6 +33,6 @@ class AuthController extends Controller
     public function signout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect()->route('login');
     }
 }

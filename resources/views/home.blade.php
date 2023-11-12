@@ -22,23 +22,26 @@
 @endsection
 
 @section('content')
+@php use App\Models\Configuration; @endphp
+
 <!-- Tentang Rindi -->
 <div class="untree_co-section">
 	<div class="container">
 		<div class="row text-center justify-content-center mb-5">
-			<div class="col-lg-7"><h2 class="section-title text-center">Tentang Rindi</h2></div>
+			<div class="col-lg-7"><h2 class="section-title text-center">{{ Configuration::getHomeSectionTitle(1) }}</h2></div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-7 mt-3">
 				<div class="owl-single dots-absolute owl-carousel">
-					<img src="images/person_1.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
+					<img src="images/ceo.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
 				</div>
 			</div>
 			<div class="col-lg-5 pl-lg-5 ml-auto  mt-3">
 				<!-- <h2 class="section-title mb-4">About Tours</h2> -->
 				<p class="text-justify">
-					<b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga-lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan.
+					<!-- <b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga-lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan. -->
+					{{ Configuration::getHomeSectionContent(1) }}
 				</p>
 				<!-- Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing. -->
 				
@@ -65,7 +68,7 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-title text-center mb-5">Mereka Yang Percaya Kami</h2>
+				<h2 class="section-title text-center mb-5">{{ Configuration::getHomeSectionTitle(2) }}</h2>
 
 				<div class="owl-5-slider owl-carousel no-nav d-flex justify-content-center">
 					@foreach($partnerlogos as $logo)
@@ -87,7 +90,7 @@
 <div class="untree_co-section ">
 	<div class="container">
 		<div class="row text-center justify-content-center mb-5">
-			<div class="col-lg-7"><h2 class="section-title text-center">Dokumentasi Tamu</h2></div>
+			<div class="col-lg-7"><h2 class="section-title text-center">{{ Configuration::getHomeSectionTitle(3) }}</h2></div>
 		</div>
 
 		<div class="owl-carousel owl-5-slider d-flex justify-content-center">
@@ -114,7 +117,7 @@
 	<div class="container">
 		<div class="row mb-5 justify-content-center">
 			<div class="col-lg-6 text-center">
-				<h2 class="section-title text-center mb-3">Produk Kami</h2>
+				<h2 class="section-title text-center mb-3">{{ Configuration::getHomeSectionTitle(4) }}</h2>
 				<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> -->
 			</div>
 		</div>
@@ -122,8 +125,8 @@
 			<!-- <div class="col-lg-4 order-lg-1">
 				<div class="h-100"><div class="frame h-100"><div class="feature-img-bg h-100" style="background-image: url('images/hero-slider-1.jpg');"></div></div></div>
 			</div> -->
-			<div class="col-lg-2"></div>
-			<div class="col-12 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1" >
+			
+			<div class="col-12 col-sm-6 feature-1-wrap d-md-flex flex-md-column order-lg-1" >
 
 				<div class="feature-1 d-md-flex">
 					<div class="align-self-center">
@@ -145,7 +148,7 @@
 
 			</div>
 
-			<div class="col-12 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3 mt-4 mt-sm-0" >
+			<div class="col-12 col-sm-6 feature-1-wrap d-md-flex flex-md-column order-lg-3 mt-4 mt-sm-0" >
 
 				<div class="feature-1 d-md-flex">
 					<div class="align-self-center">
@@ -175,7 +178,7 @@
 <div class="untree_co-section ">
 	<div class="container">
 		<div class="row text-center justify-content-center mb-5">
-			<div class="col-lg-7"><h2 class="section-title text-center">Kenapa Pilih Rindi?</h2></div>
+			<div class="col-lg-7"><h2 class="section-title text-center">{{ Configuration::getHomeSectionTitle(5) }}</h2></div>
 		</div>
 
 		<div class="row">
@@ -187,7 +190,8 @@
 			<div class="col-lg-5 pl-lg-5 ml-auto  mt-3">
 				<!-- <h2 class="section-title mb-4">About Tours</h2> -->
 				<p class="text-justify">
-					<b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga-lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan.
+					<!-- <b>PT. Rindi Sigma Sultana</b> berdiri sejak tahun 2004 berbentuk CV, dan sejak tahun 2016 menjadi PT. Kami memiliki team yang handal dan terampil di bidangnya. Dengan konsep Pelayanan Prima kami peruntukan bagi lembaga-lembaga pemerintahan, industri, perdagangan, perusahaan swasta, perorangan dan asosiasi profesi. Untuk menghasilkansebuah karya jasa yang sukses maka kami menerapkan profesionalisme dan integritas berdampingan bahkan menyatu. Integritas inilah yang sering tidak termasuk dalam kontrak kerja karena memang sulit untuk didefinisikan. -->
+					{{ Configuration::getHomeSectionContent(5) }}
 				</p>
 				<!-- Dengan Reputasi yang baik dengan para rekanan/suppliers seperti : Airlines, Hotels, dan Transportasi menjadikan kami berada daam posisi yang memungkinkan untuk mengadakan pendekata - pendekatan yang fleksibel dan mendapatkan harga -harga yang bersaing. -->
 				
@@ -420,7 +424,7 @@
 	<div class="container">
 		<div class="row text-center">
 			<div class="col-md-12">
-				<h2 class="mb-2 text-white">Rasakan Pengalaman Menyenangkan dan Kemudahan Dalam Perjalanan. Hubungi kami sekarang</h2>
+				<h2 class="mb-2 text-white">{{ Configuration::getWhatsAppSection() }}</h2>
 				<!-- <p class="mb-4 lead text-white text-white-opacity">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fugit?</p> -->
 				<br></br><p class="mb-0"><a href="https://wa.me/+6281218680145" target="_blank" class="btn btn-outline-white text-white btn-md font-weight-bold"><span class="icon-whatsapp"></span> WhatsApp</a></p>
 			</div>

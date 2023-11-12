@@ -15,6 +15,7 @@
 @endsection
   
 @section('content')
+@php use App\Models\Configuration; @endphp
   <!-- <div class="untree_co-section">
     <div class="container">
       <div class="row">
@@ -55,8 +56,8 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-6 text-center">
-          <h2 class="section-title mb-3 text-center">Team</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+          <h2 class="section-title mb-3 text-center">{{ Configuration::getAboutSectionTitle(1) }}</h2>
+          <p>{{ Configuration::getAboutSectionContent(1) }}</p>
         </div>
       </div>
 

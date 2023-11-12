@@ -22,6 +22,27 @@ class ConfigurationController extends Controller
         ]);
     }
 
+    public function homepage(){
+        return view('admin.config.homepage', [
+            "partners" => FileUpload::where('object_type', FileUpload::TYPE_PARTNER)->get(),
+            "guestdocs" => FileUpload::where('object_type', FileUpload::TYPE_GUEST_DOCUMENTATION)->get(),
+
+            "HomeSection1Title" => Configuration::getHomeSectionTitle(1),
+            "HomeSection2Title" => Configuration::getHomeSectionTitle(2),
+            "HomeSection3Title" => Configuration::getHomeSectionTitle(3),
+            "HomeSection4Title" => Configuration::getHomeSectionTitle(4),
+            "HomeSection5Title" => Configuration::getHomeSectionTitle(5),
+            "HomeSection1Content" => Configuration::getHomeSectionContent(1),
+            "HomeSection5Content" => Configuration::getHomeSectionContent(5),
+
+            "AboutSection1Title" => Configuration::getAboutSectionTitle(1),
+            "AboutSection1Content" => Configuration::getAboutSectionContent(1),
+            
+            "WhatsAppSection" => Configuration::getWhatsAppSection(),
+            // "HomeSection5Content" => Configuration::getHomeSectionContent(5),
+        ]);
+    }
+
     public function update(Request $request){
         $data = Configuration::all();
 
@@ -35,90 +56,45 @@ class ConfigurationController extends Controller
             $d->save();
         }
 
-        return back()->withInput();
+        if(isset($request->current_url)){
+            return redirect($request->current_url);
+        } else {
+            return back();
+        }
     }
 
-    public function homepage(){
-        return view('admin.config.homepage', [
-            "partners" => FileUpload::where('object_type', FileUpload::TYPE_PARTNER)->get(),
-            "guestdocs" => FileUpload::where('object_type', FileUpload::TYPE_GUEST_DOCUMENTATION)->get(),
-        ]);
+    public function updateHomeSection(Request $request){
+        $data = Configuration::all();
+
+        foreach($data as $d){
+            switch($d->name){
+                case Configuration::HOME_SECTION_1_TITLE    : $d->value = $request->HomeSection1Title; break;
+                case Configuration::HOME_SECTION_2_TITLE    : $d->value = $request->HomeSection2Title; break;
+                case Configuration::HOME_SECTION_3_TITLE    : $d->value = $request->HomeSection3Title; break;
+                case Configuration::HOME_SECTION_4_TITLE    : $d->value = $request->HomeSection4Title; break;
+                case Configuration::HOME_SECTION_5_TITLE    : $d->value = $request->HomeSection5Title; break;
+
+                case Configuration::HOME_SECTION_1_CONTENT  : $d->value = $request->HomeSection1Content; break;
+                case Configuration::HOME_SECTION_5_CONTENT  : $d->value = $request->HomeSection5Content; break;
+                
+                case Configuration::WHATSAPP_SECTION        : $d->value = $request->WhatsAppSection; break;
+                
+                case Configuration::ABOUT_SECTION_1_TITLE   : $d->value = $request->AboutSection1Title; break;
+                case Configuration::ABOUT_SECTION_1_CONTENT : $d->value = $request->AboutSection1Content; break;
+                default: break;
+            }
+            $d->save();
+        }
+
+        if(isset($request->current_url)){
+            return redirect($request->current_url);
+        } else {
+            return back();
+        }
     }
 
-    public function updateHomepage(Request $request){
-
-        /* Partners Section */
-        if($request->hasFile('partners')){
-            $images = FileUpload::where('object_type', FileUpload::TYPE_PARTNER)->get();
     
-            if($images->isNotEmpty()){
-                foreach($images as $image){
-                    Storage::delete($image->destination);
-                    $image->delete();
-                }
-            }
-            
-            $files = $request->file('partners');
-
-            foreach($files as $file){
-                $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
-                
-                // Create and save the image record
-                FileUpload::create([
-                    'originalname' => $file->getClientOriginalName(),
-                    'mimetype' => $file->getMimeType(),
-                    'encoding' => null,
-                    'path' => '/uploads',
-                    'destination' => '/uploads/' . $filename,
-                    'size' => $file->getSize(),
-                    'aux' => null,
-                    'uploader_id' => Auth::user()->id,
-                    'object_type' => FileUpload::TYPE_PARTNER
-                ]);
-
-                // Move the uploaded image to the desired location
-                $file->move('uploads', $filename);
-            }
-        }
-
-        /* Client Documentation Section */
-        if($request->hasFile('guest_doc')){
-            $images = FileUpload::where('object_type', FileUpload::TYPE_GUEST_DOCUMENTATION)->get();
-            
-            if($images->isNotEmpty()){
-                foreach($images as $image){
-                    Storage::delete($image->destination);
-                    $image->delete();
-                }
-            }
-
-            $files = $request->file('guest_doc');
-
-            foreach($files as $file){
-                $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
-                
-                // Create and save the image record
-                FileUpload::create([
-                    'originalname' => $file->getClientOriginalName(),
-                    'mimetype' => $file->getMimeType(),
-                    'encoding' => null,
-                    'path' => '/uploads',
-                    'destination' => '/uploads/' . $filename,
-                    'size' => $file->getSize(),
-                    'aux' => null,
-                    'uploader_id' => Auth::user()->id,
-                    'object_type' => FileUpload::TYPE_GUEST_DOCUMENTATION
-                ]);
-
-                // Move the uploaded image to the desired location
-                $file->move('uploads', $filename);
-            }
-        }
-
-        return redirect(Request::url());
-    }
-
-    function updateHomepage2(Request $request){
+    function updateHomepage(Request $request){
         if($request->hasFile('partner')){
             $file = $request->file('partner');
             $filename = date("YmdHis") . rand(0,999) . '.' . $file->getClientOriginalExtension();
@@ -157,6 +133,12 @@ class ConfigurationController extends Controller
             $file->move('uploads', $filename);
         }
 
-        return back()->withInput();
+
+
+        if(isset($request->current_url)){
+            return redirect($request->current_url);
+        } else {
+            return back();
+        }
     }
 }

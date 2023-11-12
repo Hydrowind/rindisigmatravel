@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth.admin']], function(){
     Route::get('/', [ConfigurationController::class, 'index'])->name('admin.config');
     Route::put('/', [ConfigurationController::class, 'update'])->name('config.update');
     Route::get('/homepage', [ConfigurationController::class, 'homepage'])->name('admin.config.homepage');
-    Route::put('/homepage', [ConfigurationController::class, 'updateHomepage2'])->name('admin.config.homepage.update');
+    Route::put('/partner', [ConfigurationController::class, 'updatePartner'])->name('admin.config.partner');
+    Route::put('/homepage', [ConfigurationController::class, 'updateHomeSection'])->name('admin.config.homesection');
   });
 });

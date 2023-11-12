@@ -22,6 +22,7 @@
 
     <label class="form-label mt-3">Image</label>
     <input type="file" class="form-control" name="image">
+    <p class="fs-6 text-muted">Recommended image ratio 1:1 (ex: 500x500, 700x700, 1000x1000, etc.)</p>
 
     <input type="hidden" name="role" value="1">
 

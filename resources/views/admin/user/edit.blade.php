@@ -20,8 +20,14 @@
     <label class="form-label mt-3">Position</label>
     <input type="text" class="form-control" name="position" placeholder="Marketting" value="{{ $data->position }}">
 
+    @if($data->images->isNotEmpty())
+    <div class="d-block mt-3">
+      <img src="{{ $data->images->first()->destination }}" width="150px">
+    </div>
+    @endif
     <label class="form-label mt-3">Image</label>
     <input type="file" class="form-control" name="image">
+    <p class="fs-6 text-muted">Recommended image ratio 1:1 (ex: 500x500, 700x700, 1000x1000, etc.)</p>
     
     <!-- @if($data->images->isNotEmpty())
     <img class="d-block" src="{{ $data->images->first()->destination }}" width="150px" heigh="150px"/>

@@ -12,6 +12,21 @@ class Configuration extends Model
     const WHATSAPP = 'WhatsApp';
     const HEADSCRIPT = 'HeadScript';
     const BODYSCRIPT = 'BodyScript';
+    
+    const HOME_SECTION_1_TITLE = 'HomeSection1Title';
+    const HOME_SECTION_2_TITLE = 'HomeSection2Title';
+    const HOME_SECTION_3_TITLE = 'HomeSection3Title';
+    const HOME_SECTION_4_TITLE = 'HomeSection4Title';
+    const HOME_SECTION_5_TITLE = 'HomeSection5Title';
+    
+    const HOME_SECTION_1_CONTENT = 'HomeSection1Content';
+    const HOME_SECTION_5_CONTENT = 'HomeSection5Content';
+    
+    const WHATSAPP_SECTION = 'WhatsAppSection';
+    
+    
+    const ABOUT_SECTION_1_TITLE = 'AboutSection1Title';
+    const ABOUT_SECTION_1_CONTENT = 'AboutSection1Content';
 
     protected $fillable = [
         'name',
@@ -19,6 +34,59 @@ class Configuration extends Model
     ];
 
     public function getWhatsApp(){
-        return Configuration::where('name', this::WHATSAPP)->value;
+        return Configuration::where('name', this::WHATSAPP)->first()->value;
+    }
+
+    public static function getHomeSectionTitle($sec_num){
+        $whereClause = '';
+
+        switch($sec_num){
+            case 1: $whereClause = Configuration::HOME_SECTION_1_TITLE; break;
+            case 2: $whereClause = Configuration::HOME_SECTION_2_TITLE; break;
+            case 3: $whereClause = Configuration::HOME_SECTION_3_TITLE; break;
+            case 4: $whereClause = Configuration::HOME_SECTION_4_TITLE; break;
+            case 5: $whereClause = Configuration::HOME_SECTION_5_TITLE; break;
+            default: break;
+        }
+
+        return Configuration::where('name', $whereClause)->first()->value;
+    }
+
+    public static function getHomeSectionContent($sec_num){
+        $whereClause = '';
+
+        switch($sec_num){
+            case 1: $whereClause = Configuration::HOME_SECTION_1_CONTENT; break;
+            case 5: $whereClause = Configuration::HOME_SECTION_5_CONTENT; break;
+            default: break;
+        }
+
+        return Configuration::where('name', $whereClause)->first()->value;
+    }
+
+    public static function getAboutSectionTitle($sec_num){
+        $whereClause = '';
+
+        switch($sec_num){
+            case 1: $whereClause = Configuration::ABOUT_SECTION_1_TITLE; break;
+            default: break;
+        }
+
+        return Configuration::where('name', $whereClause)->first()->value;
+    }
+
+    public static function getAboutSectionContent($sec_num){
+        $whereClause = '';
+
+        switch($sec_num){
+            case 1: $whereClause = Configuration::ABOUT_SECTION_1_CONTENT; break;
+            default: break;
+        }
+
+        return Configuration::where('name', $whereClause)->first()->value;
+    }
+
+    public static function getWhatsAppSection(){
+        return Configuration::where('name', Configuration::WHATSAPP_SECTION)->first()->value;
     }
 }

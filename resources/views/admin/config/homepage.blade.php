@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+@php
+  use App\Models\Configuration;
+@endphp
 <h1 class="h3 mb-3"><strong>Site</strong> Homepage Configuration</h1>
 
 <div class="card">
@@ -71,6 +74,12 @@
 
     <label class="form-label mt-3">Section 1 Title</label>
     <input type="text" class="form-control" name="HomeSection1Title" value="{{ $HomeSection1Title }}">
+
+    <img class="mt-3 d-block" src="{{ Configuration::getHomeSectionImage(1)->destination }}" alt="" width="250px">
+
+    <label class="form-label mt-3">Section 1 Image</label>
+    <input type="file" class="form-control" name="HomeSection1Image">
+    <p class="fs-6 text-muted">Recommended image ratio 3:2 (ex: 600x400, 1200x800, 1500x1000, etc.)</p>
     
     <label class="form-label mt-3">Section 1 Content</label>
     <input type="text" class="form-control" name="HomeSection1Content" value="{{ $HomeSection1Content }}">
@@ -87,6 +96,12 @@
     <label class="form-label mt-3">Section 5 Title</label>
     <input type="text" class="form-control" name="HomeSection5Title" value="{{ $HomeSection5Title }}">
     
+    <img class="mt-3 d-block" src="{{ Configuration::getHomeSectionImage(5)->destination }}" alt="" width="250px">
+
+    <label class="form-label mt-3">Section 5 Image</label>
+    <input type="file" class="form-control" name="HomeSection5Image">
+    <p class="fs-6 text-muted">Recommended image ratio 3:2 (ex: 600x400, 1200x800, 1500x1000, etc.)</p>
+
     <label class="form-label mt-3">Section 5 Content</label>
     <input type="text" class="form-control" name="HomeSection5Content" value="{{ $HomeSection5Content }}">
     

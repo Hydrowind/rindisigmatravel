@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-lg-7 mt-3">
 				<div class="owl-single dots-absolute owl-carousel">
-					<img src="images/ceo.jpg" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
+					<img src="{{ Configuration::getHomeSectionImage(1)->destination }}" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
 				</div>
 			</div>
 			<div class="col-lg-5 pl-lg-5 ml-auto  mt-3">
@@ -184,7 +184,7 @@
 		<div class="row">
 			<div class="col-lg-7 mt-3">
 				<div class="owl-single dots-absolute owl-carousel">
-					<img src="images/hero-slider-4-ls.png" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
+					<img src="{{ Configuration::getHomeSectionImage(5)->destination }}" alt="Free HTML Template by Untree.co" class="img-fluid rounded-20">
 				</div>
 			</div>
 			<div class="col-lg-5 pl-lg-5 ml-auto  mt-3">

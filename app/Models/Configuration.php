@@ -89,4 +89,11 @@ class Configuration extends Model
     public static function getWhatsAppSection(){
         return Configuration::where('name', Configuration::WHATSAPP_SECTION)->first()->value;
     }
+
+    public static function getHomeSectionImage($sec_num){
+        switch($sec_num){
+            case 1: return FileUpload::where('object_type', FileUpload::TYPE_HOME_SECTION_1)->first();
+            case 5: return FileUpload::where('object_type', FileUpload::TYPE_HOME_SECTION_5)->first();
+        }
+    }
 }

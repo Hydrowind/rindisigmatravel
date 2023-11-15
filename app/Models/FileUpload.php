@@ -11,6 +11,9 @@ class FileUpload extends Model
 
     const TYPE_PARTNER = 'PARTNER';
     const TYPE_GUEST_DOCUMENTATION = 'GUEST_DOCUMENTATION';
+    const TYPE_HERO = 'HERO';
+    const TYPE_HOME_SECTION_1 = 'HOME_SECTION_1';
+    const TYPE_HOME_SECTION_5 = 'HOME_SECTION_5';
 
     protected $morphMap = [
         'user' => 'App\Models\User',

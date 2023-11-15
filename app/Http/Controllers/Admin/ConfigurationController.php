@@ -86,6 +86,71 @@ class ConfigurationController extends Controller
             $d->save();
         }
 
+        // Home Section Image
+        if ($request->hasFile('HomeSection1Image')) {
+            // Validate and save the new image
+            $file = $request->file('HomeSection1Image');
+            
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+            ]);
+    
+            // Delete the old image file
+            $oldImage = FileUpload::where('object_type', FileUpload::TYPE_HOME_SECTION_1)->first();
+            Storage::delete($oldImage->destination);
+            $oldImage->delete(); // Delete the old image record
+    
+            // Save the new image record
+            $filename = date("YmdHis") . rand(0, 99) . '.' . $file->getClientOriginalExtension();
+            FileUpload::create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => Auth::user()->id,
+                'object_id' => null,
+                'object_type' => FileUpload::TYPE_HOME_SECTION_1
+            ]);
+    
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
+
+        if ($request->hasFile('HomeSection5Image')) {
+            // Validate and save the new image
+            $file = $request->file('HomeSection5Image');
+            
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif', // Adjust validation rules as needed
+            ]);
+    
+            // Delete the old image file
+            $oldImage = FileUpload::where('object_type', FileUpload::TYPE_HOME_SECTION_5)->first();
+            Storage::delete($oldImage->destination);
+            $oldImage->delete(); // Delete the old image record
+    
+            // Save the new image record
+            $filename = date("YmdHis") . rand(0, 99) . '.' . $file->getClientOriginalExtension();
+            FileUpload::create([
+                'originalname' => $file->getClientOriginalName(),
+                'mimetype' => $file->getMimeType(),
+                'encoding' => null,
+                'path' => '/uploads',
+                'destination' => '/uploads/' . $filename,
+                'size' => $file->getSize(),
+                'aux' => null,
+                'uploader_id' => Auth::user()->id,
+                'object_id' => null,
+                'object_type' => FileUpload::TYPE_HOME_SECTION_5
+            ]);
+    
+            // Move the uploaded image to the desired location
+            $file->move('uploads', $filename);
+        }
+
         if(isset($request->current_url)){
             return redirect($request->current_url);
         } else {
